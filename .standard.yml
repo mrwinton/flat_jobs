@@ -1,0 +1,4 @@
+# For available configuration options, see:
+#   https://github.com/testdouble/standard
+format: progress        # default: Standard::Formatter
+ruby_version: 3.2
