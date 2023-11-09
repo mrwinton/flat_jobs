@@ -1,6 +1,7 @@
+/.DS_Store
 /.bundle/
 /.direnv/
-/.DS_Store
+/.gem/
 /.yardoc
 /_yardoc/
 /coverage/
