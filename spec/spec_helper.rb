@@ -1,3 +1,4 @@
+require "support/coverage"
 require "bundler/setup"
 require "flat_jobs"
 
