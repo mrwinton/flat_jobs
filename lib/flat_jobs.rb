@@ -26,6 +26,10 @@ module FlatJobs
   def self.register_company(key, company)
     COMPANIES[key] = company
   end
+
+  def self.update
+    FlatJobs::Update.call
+  end
 end
 
 require "active_support"
