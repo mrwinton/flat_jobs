@@ -1,0 +1,4 @@
+spec/cassettes/** -diff linguist-generated
+data/bronze/** -diff linguist-generated
+data/silver/** linguist-generated
+data/gold/** linguist-generated
