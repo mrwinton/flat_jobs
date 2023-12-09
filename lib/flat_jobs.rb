@@ -1,6 +1,8 @@
-require "flat_jobs/version"
+# frozen_string_literal: true
 
 module FlatJobs
+  # Exception class for exceptions raised by FlatJobs.
   class Error < StandardError; end
-  # Your code goes here...
 end
+
+require "flat_jobs/version"
