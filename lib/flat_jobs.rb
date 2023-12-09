@@ -7,3 +7,4 @@ end
 
 require "flat_jobs/version"
 require "flat_jobs/client"
+require "flat_jobs/job"
