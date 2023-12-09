@@ -10,8 +10,16 @@ module FlatJobs
     SILVER = :silver
     GOLD = :gold
   end
+
+  # Supported file types
+  module FileType
+    CSV = "csv"
+    HTML = "html"
+    JSON = "json"
+  end
 end
 
 require "flat_jobs/version"
+require "flat_jobs/file_helper"
 require "flat_jobs/client"
 require "flat_jobs/job"
