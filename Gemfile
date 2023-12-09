@@ -13,3 +13,4 @@ gem "webmock"
 gem "vcr"
 gem "fakefs"
 gem "activesupport"
+gem "simplecov", require: false, group: :test
