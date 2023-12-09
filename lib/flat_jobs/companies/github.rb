@@ -2,7 +2,7 @@
 
 module FlatJobs
   module Companies
-    class Github
+    class Github < FlatJobs::Company
       FlatJobs.register_company(:github, new)
 
       def fetch_data
