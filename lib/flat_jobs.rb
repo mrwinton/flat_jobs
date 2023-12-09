@@ -6,3 +6,4 @@ module FlatJobs
 end
 
 require "flat_jobs/version"
+require "flat_jobs/client"
