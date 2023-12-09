@@ -3,6 +3,8 @@
 module FlatJobs
   module Companies
     class Github
+      FlatJobs.register_company(:github, new)
+
       def fetch_data
         FlatJobs::Client.get(**REQUEST_OPTS).body
       end
