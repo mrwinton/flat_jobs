@@ -11,7 +11,7 @@ gem "nokogiri"
 gem "rake", "~> 13.0"
 
 group :test, :development do
-  gem "standard", "~> 1.3"
+  gem "standard", "~> 1.32"
 end
 
 group :test do
