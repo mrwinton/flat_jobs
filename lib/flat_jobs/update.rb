@@ -27,7 +27,7 @@ module FlatJobs
 
     def update_companies
       FlatJobs::FileHelper.remove_files
-      data = companies.map { |key, company| update_company(key, company) }.compact.join("\n")
+      data = companies.map { |key, company| update_company(key, company) }.compact.join
       FlatJobs::FileHelper.save_file("flat_jobs", data, data_layer: DataLayer::GOLD, file_type: FileType::CSV)
     end
 

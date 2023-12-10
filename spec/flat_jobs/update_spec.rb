@@ -28,7 +28,7 @@ RSpec.describe FlatJobs::Update do
         end
 
         def parse_jobs(data)
-          "fake,csv,data"
+          "fake,csv,data\n"
         end
 
         def self.name
@@ -40,8 +40,8 @@ RSpec.describe FlatJobs::Update do
       FlatJobs::Update.call(companies: {fake: fake_company}, io: StringIO.new)
 
       expect(File.read("#{data_path}/bronze/fake_company.json")).to eq("{title: 'fake'}")
-      expect(File.read("#{data_path}/silver/fake_company.csv")).to eq("fake,csv,data")
-      expect(File.read("#{data_path}/gold/flat_jobs.csv")).to eq("fake,csv,data")
+      expect(File.read("#{data_path}/silver/fake_company.csv")).to eq("fake,csv,data\n")
+      expect(File.read("#{data_path}/gold/flat_jobs.csv")).to eq("fake,csv,data\n")
     end
 
     it "merges silver data files into a single gold data file" do
@@ -55,7 +55,7 @@ RSpec.describe FlatJobs::Update do
         end
 
         def parse_jobs(data)
-          "a,csv,data"
+          "a,csv,data\n"
         end
 
         def self.name
@@ -72,7 +72,7 @@ RSpec.describe FlatJobs::Update do
         end
 
         def parse_jobs(data)
-          "b,csv,data"
+          "b,csv,data\n"
         end
 
         def self.name
@@ -84,7 +84,7 @@ RSpec.describe FlatJobs::Update do
 
       FlatJobs::Update.call(companies: {a: a_company, b: b_company}, io: StringIO.new)
 
-      expect(File.read("#{data_path}/gold/flat_jobs.csv")).to eq("a,csv,data\nb,csv,data")
+      expect(File.read("#{data_path}/gold/flat_jobs.csv")).to eq("a,csv,data\nb,csv,data\n")
     end
 
     it "ignores disabled companies" do
@@ -98,7 +98,7 @@ RSpec.describe FlatJobs::Update do
         end
 
         def parse_jobs(data)
-          "a,csv,data"
+          "a,csv,data\n"
         end
 
         def self.name
@@ -115,7 +115,7 @@ RSpec.describe FlatJobs::Update do
 
       FlatJobs::Update.call(companies: {a: a_company, b: b_company}, io: StringIO.new)
 
-      expect(File.read("#{data_path}/gold/flat_jobs.csv")).to eq("a,csv,data")
+      expect(File.read("#{data_path}/gold/flat_jobs.csv")).to eq("a,csv,data\n")
     end
 
     it "ignores companies that raise errors" do
@@ -129,7 +129,7 @@ RSpec.describe FlatJobs::Update do
         end
 
         def parse_jobs(data)
-          "a,csv,data"
+          "a,csv,data\n"
         end
 
         def self.name
@@ -158,7 +158,7 @@ RSpec.describe FlatJobs::Update do
 
       FlatJobs::Update.call(companies: {a: a_company, b: b_company}, io: StringIO.new)
 
-      expect(File.read("#{data_path}/gold/flat_jobs.csv")).to eq("a,csv,data")
+      expect(File.read("#{data_path}/gold/flat_jobs.csv")).to eq("a,csv,data\n")
     end
   end
 end
