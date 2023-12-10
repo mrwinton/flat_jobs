@@ -4,18 +4,17 @@
 
 </div>
 
-FlatJobs is a project for curating a personalised jobs board — [git-scraping]
-company job pages into flat files. This is an alternative experience to the
-_one-size-fits-all_ job aggregator sites that do not spark joy.
+FlatJobs is a project for curating a personalised job board by [git-scraping]
+company-hosted careers pages into flat files. This is an alternative to the
+_one-size-fits-all_ approach from job aggregator sites that do not spark joy.
 
 Its design is guided by these values:
 
-+ **Flat first.** Plain ol' text files over buggy, slow, and heavy web apps.
-  It's just flat data, so view it how you like (tho GitHub's [Flat Viewer] is
-  nice).
++ **Flat first.** Plain ol' text files over slow and heavy web apps. It's just
+  flat data, view it how you like (tho GitHub's [Flat Viewer] is nice).
   
-+ **Scrape for later.** Track scraped company job page's changes overtime using
-  git and make it possible to view trends in jobs and job attributes.
++ **Scrape for later.** Track scraped company career page's changes overtime
+  using git and make it possible to view trends in jobs and job attributes.
   
 + **Automated.** There shouldn't be any recurring input or intervention
   necessary. Although, when things do go wrong, get notified.
