@@ -1,39 +1,66 @@
-# FlatJobs
+<div align="center">
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/flat_jobs`. To experiment with that code, run `bin/console` for an interactive prompt.
+# __flat jobs__
 
-TODO: Delete this and the text above, and describe your gem
+</div>
 
-## Installation
+---
 
-Add this line to your application's Gemfile:
+FlatJobs is a project for curating a personalised jobs board, [git-scraping]
+company job pages into flat files. This is an alternative experience to the
+__one-size-fits-all_ job aggregator sites that do not spark joy.
 
-```ruby
-gem 'flat_jobs'
-```
+Its design is guided by these values:
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install flat_jobs
-
-## Usage
-
-TODO: Write usage instructions here
++ **Flat first.** Plain ol' text files over buggy, slow, and heavy web apps.
+  It's just data, so view it how you like (tho GitHub's Flat Viewer is nice).
+  
++ **Scrape for later.** Track scraped company job page's changes overtime using
+  git and make it possible to view trends in jobs and job attributes.
+  
++ **Automated.** There shouldn't be any recurring input or intervention
+  necessary. Although, when things do go wrong, get notified.
+  
++ **Easy to add.** Adding companies should be easy, without needing to
+  internalise how the system works.
+  
+  Checkout the current [flat jobs].
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+FlatJobs uses [nix] to setup dev environment easily. 
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```shell
+# First, install nix. See nix docs for more details.
+$ curl -L https://nixos.org/nix/install | sh
 
-## Contributing
+# Then clone the repo.
+$ git clone https://github.com/mrwinton/flat_jobs
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/mrwinton/flat_jobs.
+# Change to the directory
+$ cd flat_jobs
+
+# Go into nix shell, the nix shell will auto setup all dev requirements you need
+$ nix-shell 
+
+# Install requirement gems
+$ bundle
+
+# Run flat jobs
+$ bundle exec rake update
+```
+
+## Testing
+
+```shell
+# Runing specs, code coverage and linter
+$ bundle exec rake
+```
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The project is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+[git-scraping]:https://simonwillison.net/2020/Oct/9/git-scraping/
+[flat jobs]:https://flatgithub.com/mrwinton/flat_jobs
+[nix]:(https://nixos.org)
