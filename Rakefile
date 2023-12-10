@@ -18,3 +18,5 @@ require "standard/rake"
 
 ENV["COVERAGE"] = "1"
 task default: %i[spec standard]
+
+task test: %i[spec standard]
