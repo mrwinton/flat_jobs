@@ -21,4 +21,4 @@ jobs:
       with:
         bundler-cache: true
     - name: Run specs and lint check
-      run: bundle exec rake
+      run: bundle exec rake test

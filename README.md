@@ -54,7 +54,7 @@ $ bundle exec rake update
 
 ```shell
 # Runing specs, code coverage and linter
-$ bundle exec rake
+$ bundle exec rake test
 ```
 
 ## License
