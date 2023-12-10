@@ -7,6 +7,7 @@ gemspec
 
 gem "activesupport"
 gem "faraday"
+gem "nokogiri"
 gem "rake", "~> 13.0"
 
 group :test, :development do
