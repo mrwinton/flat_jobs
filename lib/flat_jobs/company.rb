@@ -10,7 +10,7 @@ module FlatJobs
       save_file(jobs, data_layer: DataLayer::SILVER, file_type: FileType::CSV)
 
       Result::Success.new(jobs)
-    rescue FlatJobs::Error => e
+    rescue FlatJobs::Error, StandardError => e
       Result::Failure.new(e.message)
     end
 
