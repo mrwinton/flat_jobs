@@ -4,16 +4,15 @@
 
 </div>
 
----
-
-FlatJobs is a project for curating a personalised jobs board, [git-scraping]
+FlatJobs is a project for curating a personalised jobs board — [git-scraping]
 company job pages into flat files. This is an alternative experience to the
-__one-size-fits-all_ job aggregator sites that do not spark joy.
+_one-size-fits-all_ job aggregator sites that do not spark joy.
 
 Its design is guided by these values:
 
 + **Flat first.** Plain ol' text files over buggy, slow, and heavy web apps.
-  It's just data, so view it how you like (tho GitHub's Flat Viewer is nice).
+  It's just flat data, so view it how you like (tho GitHub's [Flat Viewer] is
+  nice).
   
 + **Scrape for later.** Track scraped company job page's changes overtime using
   git and make it possible to view trends in jobs and job attributes.
@@ -22,9 +21,9 @@ Its design is guided by these values:
   necessary. Although, when things do go wrong, get notified.
   
 + **Easy to add.** Adding companies should be easy, without needing to
-  internalise how the system works.
+  internalise how the system works each time.
   
-  Checkout the current [flat jobs].
+Checkout the current [flat jobs].
 
 ## Development
 
@@ -40,10 +39,10 @@ $ git clone https://github.com/mrwinton/flat_jobs
 # Change to the directory
 $ cd flat_jobs
 
-# Go into nix shell, the nix shell will auto setup all dev requirements you need
+# Go into nix shell, the nix shell will auto setup the dev environment
 $ nix-shell 
 
-# Install requirement gems
+# Install gems
 $ bundle
 
 # Run flat jobs
@@ -62,5 +61,6 @@ $ bundle exec rake test
 The project is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 [git-scraping]:https://simonwillison.net/2020/Oct/9/git-scraping/
+[Flat Viewer]:https://github.com/githubocto/flat-viewer
 [flat jobs]:https://flatgithub.com/mrwinton/flat_jobs
 [nix]:(https://nixos.org)
