@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe FlatJobs::Companies::Github do
-  describe "#fetch_data", :vcr do
+  describe "#fetch_data", vcr: "github_data" do
     it "returns data" do
       result = FlatJobs::Companies::Github.new.fetch_data
 
@@ -19,25 +19,12 @@ RSpec.describe FlatJobs::Companies::Github do
 
   describe "#parse_jobs" do
     it "returns jobs" do
-      data = <<~JSON
-        {
-          "jobs": [
-            {
-              "data": {
-                "req_id": "123",
-                "title": "Staff Software Engineer",
-                "description": "Description",
-                "location_name": "US Remote",
-                "apply_url": "http://example.com"
-              }
-            }
-          ]
-        }
-      JSON
+      data = vcr_response_data(vcr: "github_data").first
 
       result = FlatJobs::Companies::Github.new.parse_jobs(data)
 
-      expect(result).to eq("github,123,Staff Software Engineer,US Remote,http://example.com,Description\n")
+      expect(result.lines.count).not_to be_zero
+      expect(result.lines.first).to match(/github,2431,"Senior Manager, Software Engineering",US Remote,https:\/\/careers-githubinc.icims.com\/jobs\/2431\/login,"About GitHub/)
     end
   end
 end
