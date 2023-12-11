@@ -61,5 +61,5 @@ The project is available as open source under the terms of the [MIT License](htt
 
 [git-scraping]:https://simonwillison.net/2020/Oct/9/git-scraping/
 [Flat Viewer]:https://github.com/githubocto/flat-viewer
-[flat jobs]:https://flatgithub.com/mrwinton/flat_jobs
+[flat jobs]:https://flatgithub.com/mrwinton/flat_jobs?filename=data%2Fgold%2Fflat_jobs.csv
 [nix]:(https://nixos.org)
