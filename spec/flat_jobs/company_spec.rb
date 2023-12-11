@@ -87,7 +87,7 @@ RSpec.describe FlatJobs::Company do
 
       fake_company.update
 
-      expect(File.read("#{data_path}/silver/fake_company.csv")).to eq("fake,csv,data")
+      expect(File.read("#{data_path}/silver/fake_company.csv")).to eq("company,id,title,location,url,notes\nfake,csv,data")
     end
 
     context "when an error is raised" do

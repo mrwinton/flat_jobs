@@ -40,8 +40,8 @@ RSpec.describe FlatJobs::Update do
       FlatJobs::Update.call(companies: {fake: fake_company}, io: StringIO.new)
 
       expect(File.read("#{data_path}/bronze/fake_company.json")).to eq("{title: 'fake'}")
-      expect(File.read("#{data_path}/silver/fake_company.csv")).to eq("fake,csv,data\n")
-      expect(File.read("#{data_path}/gold/flat_jobs.csv")).to eq("fake,csv,data\n")
+      expect(File.read("#{data_path}/silver/fake_company.csv")).to eq("company,id,title,location,url,notes\nfake,csv,data\n")
+      expect(File.read("#{data_path}/gold/flat_jobs.csv")).to eq("company,id,title,location,url,notes\nfake,csv,data\n")
     end
 
     it "merges silver data files into a single gold data file" do
@@ -84,7 +84,7 @@ RSpec.describe FlatJobs::Update do
 
       FlatJobs::Update.call(companies: {a: a_company, b: b_company}, io: StringIO.new)
 
-      expect(File.read("#{data_path}/gold/flat_jobs.csv")).to eq("a,csv,data\nb,csv,data\n")
+      expect(File.read("#{data_path}/gold/flat_jobs.csv")).to eq("company,id,title,location,url,notes\na,csv,data\nb,csv,data\n")
     end
 
     it "ignores disabled companies" do
@@ -115,7 +115,7 @@ RSpec.describe FlatJobs::Update do
 
       FlatJobs::Update.call(companies: {a: a_company, b: b_company}, io: StringIO.new)
 
-      expect(File.read("#{data_path}/gold/flat_jobs.csv")).to eq("a,csv,data\n")
+      expect(File.read("#{data_path}/gold/flat_jobs.csv")).to eq("company,id,title,location,url,notes\na,csv,data\n")
     end
 
     it "ignores companies that raise errors" do
@@ -158,7 +158,7 @@ RSpec.describe FlatJobs::Update do
 
       FlatJobs::Update.call(companies: {a: a_company, b: b_company}, io: StringIO.new)
 
-      expect(File.read("#{data_path}/gold/flat_jobs.csv")).to eq("a,csv,data\n")
+      expect(File.read("#{data_path}/gold/flat_jobs.csv")).to eq("company,id,title,location,url,notes\na,csv,data\n")
     end
   end
 end

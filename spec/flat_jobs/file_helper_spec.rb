@@ -35,7 +35,7 @@ RSpec.describe FlatJobs::FileHelper do
 
       FlatJobs::FileHelper.save_file(key, data, data_layer: data_layer, file_type: file_type)
 
-      expect(File.read("#{data_path}/silver/test.csv")).to eq(data)
+      expect(File.read("#{data_path}/silver/test.csv")).to eq("company,id,title,location,url,notes\n" + data)
     end
 
     it "saves gold data" do
@@ -47,7 +47,7 @@ RSpec.describe FlatJobs::FileHelper do
 
       FlatJobs::FileHelper.save_file(key, data, data_layer: data_layer, file_type: file_type)
 
-      expect(File.read("#{data_path}/gold/test.csv")).to eq(data)
+      expect(File.read("#{data_path}/gold/test.csv")).to eq("company,id,title,location,url,notes\n" + data)
     end
 
     it "performs no-op with no data" do

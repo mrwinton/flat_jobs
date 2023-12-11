@@ -17,4 +17,12 @@ RSpec.describe FlatJobs::Job do
       expect(result).to eq("Company,1,Staff Engineer,Remote,http://example.com,Notes\n")
     end
   end
+
+  describe ".keys" do
+    it "returns Job keys" do
+      result = FlatJobs::Job.keys
+
+      expect(result).to eq("company,id,title,location,url,notes\n")
+    end
+  end
 end

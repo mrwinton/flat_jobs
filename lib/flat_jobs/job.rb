@@ -4,7 +4,9 @@ require "csv"
 
 module FlatJobs
   class Job
-    attr_reader :company, :id, :title, :url, :location, :notes
+    ATTRS = %i[company id title location url notes]
+
+    attr_reader(*ATTRS)
 
     def initialize(company:, id:, title:, url:, location:, notes:)
       @company = company
@@ -19,10 +21,16 @@ module FlatJobs
       to_a.to_csv
     end
 
+    def self.keys
+      ATTRS.to_csv
+    end
+
     private
 
     def to_a
-      [company, id, title, location, url, notes]
+      ATTRS.map do |attr|
+        instance_variable_get("@#{attr}")
+      end
     end
   end
 end

@@ -5,6 +5,7 @@ module FlatJobs
     class << self
       def save_file(key, data, data_layer:, file_type:)
         path = build_path(key, data_layer, file_type)
+        data = add_csv_header(data) if add_csv_header?(data_layer)
 
         File.write(path, data) if data.present?
       end
@@ -25,6 +26,14 @@ module FlatJobs
 
       def file_types
         [FileType::CSV, FileType::JSON, FileType::HTML].join(",")
+      end
+
+      def add_csv_header(data)
+        [FlatJobs::Job.keys, data].join if data.present?
+      end
+
+      def add_csv_header?(data_layer)
+        [DataLayer::GOLD, DataLayer::SILVER].include?(data_layer)
       end
     end
   end
