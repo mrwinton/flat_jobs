@@ -35,7 +35,7 @@ module FlatJobs
       result = company.update if company.enabled?
 
       if company.enabled? && result.success?
-        log("- #{key}: #{result.value.lines.count} job(s)")
+        log("- #{key}: #{result.value.lines.count} row(s)")
 
         result.value
       elsif company.enabled? && result.failure?
