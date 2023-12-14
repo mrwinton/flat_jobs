@@ -11,6 +11,7 @@ gem "nokogiri"
 gem "rake", "~> 13.0"
 
 group :test, :development do
+  gem "solargraph"
   gem "standard", "~> 1.32"
 end
 
