@@ -21,7 +21,9 @@ RSpec.describe FlatJobs::Companies::Shopify do
     it "does not raise error when no jobs are returned" do
       data = vcr_response_data(vcr: "shopify_data").first
 
-      expect { FlatJobs::Companies::Shopify.new.parse_jobs(data) }.not_to raise_error
+      result = FlatJobs::Companies::Shopify.new.parse_jobs(data)
+
+      expect(result).to eq("shopify,-,-,-,-,0 jobs found\n")
     end
 
     it "raises an error when jobs are returned" do
