@@ -40,6 +40,7 @@ require "flat_jobs/result"
 require "flat_jobs/file_helper"
 require "flat_jobs/client"
 require "flat_jobs/job"
+require "flat_jobs/wip_job"
 require "flat_jobs/company"
 require "flat_jobs/update"
 Dir.glob(Dir.pwd + "/lib/flat_jobs/companies/*.rb").each { |file| require file }
