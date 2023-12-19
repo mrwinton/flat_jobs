@@ -35,7 +35,9 @@ RSpec.describe FlatJobs::Companies::Shopify do
         }
       JSON
 
-      expect { FlatJobs::Companies::Shopify.new.parse_jobs(data) }.to raise_error(FlatJobs::Error, "Job postings are up")
+      result = FlatJobs::Companies::Shopify.new.parse_jobs(data)
+
+      expect(result).to eq("shopify,-,-,-,-,2 jobs found\n")
     end
   end
 end

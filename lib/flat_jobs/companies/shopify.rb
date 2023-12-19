@@ -22,7 +22,6 @@ module FlatJobs
 
       def parse_jobs(data)
         data = JSON.parse(data, symbolize_names: true)
-        raise FlatJobs::Error.new("Job postings are up") if data[:result].present? || data[:postings].present?
 
         FlatJobs::WipJob.new(company: company_name, count: data[:postings].count).to_csv
       end
