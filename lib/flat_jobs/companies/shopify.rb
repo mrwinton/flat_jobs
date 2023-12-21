@@ -23,7 +23,7 @@ module FlatJobs
       def parse_jobs(data)
         data = JSON.parse(data, symbolize_names: true)
 
-        FlatJobs::WipJob.new(company: company_name, count: data[:postings].count).to_csv
+        FlatJobs::NullJob.new(company: company_name, count: data[:postings].count).to_csv
       end
 
       private

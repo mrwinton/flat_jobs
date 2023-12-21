@@ -3,7 +3,7 @@
 require "csv"
 
 module FlatJobs
-  class WipJob
+  class NullJob
     attr_reader :company, :count
 
     def initialize(company:, count:)

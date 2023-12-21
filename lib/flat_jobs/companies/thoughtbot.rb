@@ -25,7 +25,7 @@ module FlatJobs
         jobs_empty = data.include?("We currently have no open positions.")
         jobs_count = jobs_empty ? 0 : 1
 
-        FlatJobs::WipJob.new(company: company_name, count: jobs_count).to_csv
+        FlatJobs::NullJob.new(company: company_name, count: jobs_count).to_csv
       end
 
       REQUEST_OPTS = {

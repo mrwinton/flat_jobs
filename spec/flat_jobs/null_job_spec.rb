@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-RSpec.describe FlatJobs::WipJob do
+RSpec.describe FlatJobs::NullJob do
   describe "#to_csv" do
     it "returns the wip job as a CSV string" do
-      job = FlatJobs::WipJob.new(
+      job = FlatJobs::NullJob.new(
         company: "Company",
         count: 3
       )
