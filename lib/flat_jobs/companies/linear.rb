@@ -24,10 +24,10 @@ module FlatJobs
       end
 
       def parse_jobs(data)
-        json = JSON.parse(data, symbolize_names: true)
-        json.dig(*JOBS_PATH)
+        JSON.parse(data, symbolize_names: true)
+          .dig(*JOBS_PATH)
           .map { |_, jobs| jobs }.flatten
-          .map { |job| parse_job(job).to_csv }.join
+          .map { |job| parse_job(job) }
       end
 
       private

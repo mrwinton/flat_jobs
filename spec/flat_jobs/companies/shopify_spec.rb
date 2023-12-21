@@ -23,7 +23,10 @@ RSpec.describe FlatJobs::Companies::Shopify do
 
       result = FlatJobs::Companies::Shopify.new.parse_jobs(data)
 
-      expect(result).to eq("shopify,-,-,-,-,0 jobs found\n")
+      expect(result.count).not_to be_zero
+      job = result.first
+      expect(job.company).to eq("shopify")
+      expect(job.notes).to eq("0 jobs found")
     end
 
     it "raises an error when jobs are returned" do
@@ -37,7 +40,10 @@ RSpec.describe FlatJobs::Companies::Shopify do
 
       result = FlatJobs::Companies::Shopify.new.parse_jobs(data)
 
-      expect(result).to eq("shopify,-,-,-,-,2 jobs found\n")
+      expect(result.count).not_to be_zero
+      job = result.first
+      expect(job.company).to eq("shopify")
+      expect(job.notes).to eq("2 jobs found")
     end
   end
 end

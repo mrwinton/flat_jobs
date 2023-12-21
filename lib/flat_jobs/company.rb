@@ -6,7 +6,7 @@ module FlatJobs
       data = fetch_data
       save_file(data, data_layer: DataLayer::BRONZE, file_type: data_file_type)
 
-      jobs = parse_jobs(data)
+      jobs = parse(data)
       save_file(jobs, data_layer: DataLayer::SILVER, file_type: FileType::CSV)
 
       Result::Success.new(jobs)
@@ -34,6 +34,15 @@ module FlatJobs
 
     def disabled?
       ENV.key?("#{company_name.upcase}_DISABLED")
+    end
+
+    def parse(data)
+      jobs = parse_jobs(data).presence || null_data
+      jobs.map(&:to_csv).join
+    end
+
+    def null_data
+      [FlatJobs::NullJob.new(company: company_name, notes: "0 jobs found")]
     end
 
     def save_file(data, data_layer:, file_type:)

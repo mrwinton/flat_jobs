@@ -21,9 +21,7 @@ module FlatJobs
       end
 
       def parse_jobs(data)
-        data = JSON.parse(data, symbolize_names: true)
-
-        FlatJobs::NullJob.new(company: company_name, count: data[:postings].count).to_csv
+        [null_job(data)]
       end
 
       private
@@ -76,6 +74,13 @@ module FlatJobs
         "content-type" => "application/x-www-form-urlencoded;charset=UTF-8"
       }
       private_constant :HEADERS
+
+      def null_job(data)
+        data = JSON.parse(data, symbolize_names: true)
+        notes = "#{data[:postings].count} jobs found"
+
+        FlatJobs::NullJob.new(company: company_name, notes: notes)
+      end
     end
   end
 end

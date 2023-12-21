@@ -22,11 +22,10 @@ module FlatJobs
       end
 
       def parse_jobs(data)
-        jobs_empty = data.include?("We currently have no open positions.")
-        jobs_count = jobs_empty ? 0 : 1
-
-        FlatJobs::NullJob.new(company: company_name, count: jobs_count).to_csv
+        [null_job(data)]
       end
+
+      private
 
       REQUEST_OPTS = {
         url: "https://thoughtbot.com/jobs",
@@ -36,6 +35,13 @@ module FlatJobs
         }
       }.freeze
       private_constant :REQUEST_OPTS
+
+      def null_job(data)
+        jobs_empty = data.include?("We currently have no open positions.")
+        notes = jobs_empty ? "0 jobs found" : "1+ jobs found"
+
+        FlatJobs::NullJob.new(company: company_name, notes: notes)
+      end
     end
   end
 end

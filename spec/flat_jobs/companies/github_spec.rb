@@ -23,8 +23,14 @@ RSpec.describe FlatJobs::Companies::Github do
 
       result = FlatJobs::Companies::Github.new.parse_jobs(data)
 
-      expect(result.lines.count).not_to be_zero
-      expect(result.lines.first).to match(/github,2431,"Senior Manager, Software Engineering",US Remote,https:\/\/careers-githubinc.icims.com\/jobs\/2431\/login,"About GitHub/)
+      expect(result.count).not_to be_zero
+      job = result.first
+      expect(job.company).to eq("github")
+      expect(job.id).to eq("2431")
+      expect(job.title).to eq("Senior Manager, Software Engineering")
+      expect(job.url).to eq("https://careers-githubinc.icims.com/jobs/2431/login")
+      expect(job.location).to eq("US Remote")
+      expect(job.notes).to match(/^About GitHub.*/)
     end
   end
 end

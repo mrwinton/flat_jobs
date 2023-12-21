@@ -15,7 +15,7 @@ module FlatJobs
 
       def parse_jobs(data)
         json = JSON.parse(data, symbolize_names: true)
-        json[:jobs].map { |job| parse_job(job).to_csv }.join
+        json[:jobs].map { |job| parse_job(job) }
       end
 
       private

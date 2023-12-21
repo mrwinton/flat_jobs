@@ -30,8 +30,14 @@ RSpec.describe FlatJobs::Companies::Linear do
 
       result = FlatJobs::Companies::Linear.new.parse_jobs(data)
 
-      expect(result.lines.count).not_to be_zero
-      expect(result.lines.first).to eq("linear,0d1b715f-5de3-4924-87f1-d64e566cd065,Senior - Staff Mobile Engineer (Android),North America,https://jobs.ashbyhq.com/Linear/0d1b715f-5de3-4924-87f1-d64e566cd065,\n")
+      expect(result.count).not_to be_zero
+      job = result.first
+      expect(job.company).to eq("linear")
+      expect(job.id).to eq("0d1b715f-5de3-4924-87f1-d64e566cd065")
+      expect(job.title).to eq("Senior - Staff Mobile Engineer (Android)")
+      expect(job.url).to eq("https://jobs.ashbyhq.com/Linear/0d1b715f-5de3-4924-87f1-d64e566cd065")
+      expect(job.location).to eq("North America")
+      expect(job.notes).to be_nil
     end
   end
 end

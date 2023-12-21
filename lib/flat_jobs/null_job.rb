@@ -4,11 +4,11 @@ require "csv"
 
 module FlatJobs
   class NullJob
-    attr_reader :company, :count
+    attr_reader :company, :notes
 
-    def initialize(company:, count:)
+    def initialize(company:, notes:)
       @company = company
-      @count = count
+      @notes = notes
     end
 
     def to_csv
@@ -23,7 +23,7 @@ module FlatJobs
 
       Array.new(FlatJobs::Job::ATTRS.count) { "-" }.tap do |array|
         array[company_index] = company
-        array[notes_index] = "#{count} jobs found"
+        array[notes_index] = notes
       end
     end
   end

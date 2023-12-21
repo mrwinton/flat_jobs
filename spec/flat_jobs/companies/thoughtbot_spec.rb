@@ -29,7 +29,10 @@ RSpec.describe FlatJobs::Companies::Thoughtbot do
 
       result = FlatJobs::Companies::Thoughtbot.new.parse_jobs(data)
 
-      expect(result).to eq("thoughtbot,-,-,-,-,0 jobs found\n")
+      expect(result.count).not_to be_zero
+      job = result.first
+      expect(job.company).to eq("thoughtbot")
+      expect(job.notes).to eq("0 jobs found")
     end
 
     it "reports jobs when no-jobs-message is not found" do
@@ -37,7 +40,10 @@ RSpec.describe FlatJobs::Companies::Thoughtbot do
 
       result = FlatJobs::Companies::Thoughtbot.new.parse_jobs(data)
 
-      expect(result).to eq("thoughtbot,-,-,-,-,1 jobs found\n")
+      expect(result.count).not_to be_zero
+      job = result.first
+      expect(job.company).to eq("thoughtbot")
+      expect(job.notes).to eq("1+ jobs found")
     end
   end
 end

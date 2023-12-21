@@ -25,7 +25,8 @@ RSpec.describe FlatJobs::Company do
         end
 
         def parse_jobs(data)
-          "fake,csv,data"
+          job = FlatJobs::NullJob.new(company: "fake", notes: "notes")
+          [job]
         end
 
         def self.name
@@ -37,7 +38,33 @@ RSpec.describe FlatJobs::Company do
       result = fake_company.update
 
       expect(result).to be_success
-      expect(result.value).to eq("fake,csv,data")
+      expect(result.value).to eq("fake,-,-,-,-,notes\n")
+    end
+
+    it "returns when no jobs are present" do
+      fake_company_class = Class.new(FlatJobs::Company) do
+        def fetch_data
+          "{title: 'fake'}"
+        end
+
+        def data_file_type
+          "json"
+        end
+
+        def parse_jobs(data)
+          []
+        end
+
+        def self.name
+          "FakeCompany"
+        end
+      end
+      fake_company = fake_company_class.new
+
+      result = fake_company.update
+
+      expect(result).to be_success
+      expect(result.value).to eq("fake_company,-,-,-,-,0 jobs found\n")
     end
 
     it "saves bronze data" do
@@ -51,7 +78,8 @@ RSpec.describe FlatJobs::Company do
         end
 
         def parse_jobs(data)
-          "fake,csv,data"
+          job = FlatJobs::NullJob.new(company: "fake", notes: "notes")
+          [job]
         end
 
         def self.name
@@ -76,7 +104,8 @@ RSpec.describe FlatJobs::Company do
         end
 
         def parse_jobs(data)
-          "fake,csv,data"
+          job = FlatJobs::NullJob.new(company: "fake", notes: "notes")
+          [job]
         end
 
         def self.name
@@ -87,7 +116,7 @@ RSpec.describe FlatJobs::Company do
 
       fake_company.update
 
-      expect(File.read("#{data_path}/silver/fake_company.csv")).to eq("company,id,title,location,url,notes\nfake,csv,data")
+      expect(File.read("#{data_path}/silver/fake_company.csv")).to eq("company,id,title,location,url,notes\nfake,-,-,-,-,notes\n")
     end
 
     context "when an error is raised" do
