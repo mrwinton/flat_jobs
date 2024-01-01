@@ -29,7 +29,7 @@ module FlatJobs
 
     def to_a
       ATTRS.map do |attr|
-        instance_variable_get("@#{attr}")
+        instance_variable_get(:"@#{attr}")
       end
     end
   end
