@@ -19,11 +19,11 @@ jobs:
         bundler-cache: true
     - name: Update
       run: |
-      {
-        echo 'UPDATE_LOGS<<EOF'
-        bundle exec rake update
-        echo EOF
-      } >> "$GITHUB_ENV"
+        {
+          echo 'UPDATE_LOGS<<EOF'
+          bundle exec rake update
+          echo EOF
+        } >> "$GITHUB_ENV"
     - name: Push changes
       run: |-
         git config user.name "Automated"
