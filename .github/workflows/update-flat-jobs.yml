@@ -18,11 +18,16 @@ jobs:
       with:
         bundler-cache: true
     - name: Update
-      run: bundle exec rake update
+      run: |
+      {
+        echo 'UPDATE_LOGS<<EOF'
+        bundle exec rake update
+        echo EOF
+      } >> "$GITHUB_ENV"
     - name: Push changes
       run: |-
         git config user.name "Automated"
         git config user.email "actions@users.noreply.github.com"
         git add -A
-        git commit -m "Update ($(date "+%Y-%m-%d"))" || exit 0
+        git commit -m "Update ($(date "+%Y-%m-%d"))" -m "$UPDATE_LOGS" || exit 0
         git push
