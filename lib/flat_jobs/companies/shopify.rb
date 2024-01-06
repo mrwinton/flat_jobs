@@ -21,7 +21,8 @@ module FlatJobs
       end
 
       def parse_jobs(data)
-        [null_job(data)]
+        json = JSON.parse(data, symbolize_names: true)
+        json[:postings].map { |job| parse_job(job) }
       end
 
       private
@@ -75,11 +76,15 @@ module FlatJobs
       }
       private_constant :HEADERS
 
-      def null_job(data)
-        data = JSON.parse(data, symbolize_names: true)
-        notes = "#{data[:postings].count} jobs found"
-
-        FlatJobs::NullJob.new(company: company_name, notes: notes)
+      def parse_job(job)
+        FlatJobs::Job.new(
+          company: company_name,
+          id: job.dig(:id),
+          title: job.dig(:name),
+          location: job.dig(:location).values.first(2).join(", "),
+          url: job.dig(:ref),
+          notes: job.dig(:experienceLevel, :label)
+        )
       end
     end
   end

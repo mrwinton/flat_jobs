@@ -5,10 +5,10 @@ http_interactions:
     uri: https://www.shopify.com/careers/disciplines/engineering?_data=pages/($locale)/careers/disciplines/engineering
     body:
       encoding: UTF-8
-      string: tags%5B%5D=Software+Engineering&tags%5B%5D=Backend+Engineering&tags%5B%5D=Can+hold+your+own&tags%5B%5D=Enough+experience+to+mentor&tags%5B%5D=Team+problem+solver&tags%5B%5D=Strategic+and+universal+problem-solver&tags%5B%5D=Technical+influencer&tags%5B%5D=Product+dreamer+and+shipper&tags%5B%5D=GraphQL&tags%5B%5D=MySQL&tags%5B%5D=Ruby&tags%5B%5D=Rails&tags%5B%5D=Develop+a+career&tags%5B%5D=Teach+and+coach+others&tags%5B%5D=Caused+a+production+outage&tags%5B%5D=Denied+CTO%E2%80%99s+diff&tags%5B%5D=Pushed+directly+to+main&tags%5B%5D=Pitched+a+founder+in+an+elevator&tags%5B%5D=Deleted+1000%2B+lines+of+code&tags%5B%5D=Contributed+100%2B+lines+to+open+source&tags%5B%5D=Woke+up+in+the+middle+of+the+night+by+oncall&tags%5B%5D=AI&tags%5B%5D=Risk+Taker&tags%5B%5D=Process+Instigator&tags%5B%5D=Curious+Questioner&tags%5B%5D=Corporate+Climber&tags%5B%5D=Serial+Entrepreneur&tags%5B%5D=Career+Shapeshifter&tags%5B%5D=High-rung+Thinker&tags%5B%5D=Outlier&tags%5B%5D=EMEA&tags%5B%5D=quest-checkboxes
+      string: tags%5B%5D=Software+Engineering&tags%5B%5D=Backend+Engineering&tags%5B%5D=Can+hold+your+own&tags%5B%5D=Enough+experience+to+mentor&tags%5B%5D=Team+problem+solver&tags%5B%5D=Strategic+and+universal+problem-solver&tags%5B%5D=Technical+influencer&tags%5B%5D=Product+dreamer+and+shipper&tags%5B%5D=GraphQL&tags%5B%5D=MySQL&tags%5B%5D=Ruby&tags%5B%5D=Rails&tags%5B%5D=Develop+a+career&tags%5B%5D=Teach+and+coach+others&tags%5B%5D=Caused+a+production+outage&tags%5B%5D=Denied+CTO%E2%80%99s+diff&tags%5B%5D=Pushed+directly+to+main&tags%5B%5D=Deleted+1000%2B+lines+of+code&tags%5B%5D=Contributed+100%2B+lines+to+open+source&tags%5B%5D=Woke+up+in+the+middle+of+the+night+by+oncall&tags%5B%5D=AI&tags%5B%5D=Risk+Taker&tags%5B%5D=Process+Instigator&tags%5B%5D=Curious+Questioner&tags%5B%5D=Corporate+Climber&tags%5B%5D=Serial+Entrepreneur&tags%5B%5D=Career+Shapeshifter&tags%5B%5D=High-rung+Thinker&tags%5B%5D=Outlier&tags%5B%5D=EMEA&tags%5B%5D=quest-checkboxes
     headers:
       User-Agent:
-      - Faraday v2.7.12
+      - Faraday v2.8.1
       Authority:
       - www.shopify.com
       Accept:
@@ -31,7 +31,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 12 Dec 2023 18:15:22 GMT
+      - Sat, 06 Jan 2024 21:27:22 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -41,12 +41,12 @@ http_interactions:
       Cache-Control:
       - max-age=0, stale-while-revalidate=0
       Set-Cookie:
-      - _shopify_s=0b6b1f44-9c16-4ccd-b220-0f101345eb2a; Domain=shopify.com; Path=/;
-        Expires=Tue, 12 Dec 2023 18:45:22 GMT; Secure; SameSite=Lax
-      - _shopify_y=8438b35b-6a16-4972-ade9-455b2908989b; Domain=shopify.com; Path=/;
-        Expires=Wed, 11 Dec 2024 18:15:22 GMT; Secure; SameSite=Lax
-      - v:a:3=%7B%227973da7279749aeebdebf58dbd460d80%22%3A%7B%22variant%22%3A%22exposure%22%2C%22createdAt%22%3A1702404922095%7D%7D;
-        Domain=shopify.com; Path=/; Expires=Wed, 12 Jun 2024 09:09:58 GMT; Secure;
+      - _shopify_s=27ce8243-b4e3-4b8d-9bec-efff93b78b90; Domain=shopify.com; Path=/;
+        Expires=Sat, 06 Jan 2024 21:57:21 GMT; Secure; SameSite=Lax
+      - _shopify_y=7d155397-9e28-4b0f-9858-a05b9d5f41b7; Domain=shopify.com; Path=/;
+        Expires=Sun, 05 Jan 2025 21:27:21 GMT; Secure; SameSite=Lax
+      - v:a:3=%7B%229882de863a93bdbca2f2406f62479dc4%22%3A%7B%22variant%22%3A%22exposure%22%2C%22createdAt%22%3A1704576441443%7D%7D;
+        Domain=shopify.com; Path=/; Expires=Sun, 07 Jul 2024 12:21:57 GMT; Secure;
         SameSite=Lax
       X-Remix-Response:
       - 'yes'
@@ -59,12 +59,12 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 8347f3caeba90a3b-ARN
+      - 84170b66de760d36-ARN
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJzdWJtaXR0ZWRUYWdzIjpbIlNvZnR3YXJlIEVuZ2luZWVyaW5nIiwiQmFja2VuZCBFbmdpbmVlcmluZyIsIkNhbiBob2xkIHlvdXIgb3duIiwiRW5vdWdoIGV4cGVyaWVuY2UgdG8gbWVudG9yIiwiVGVhbSBwcm9ibGVtIHNvbHZlciIsIlN0cmF0ZWdpYyBhbmQgdW5pdmVyc2FsIHByb2JsZW0tc29sdmVyIiwiVGVjaG5pY2FsIGluZmx1ZW5jZXIiLCJQcm9kdWN0IGRyZWFtZXIgYW5kIHNoaXBwZXIiLCJHcmFwaFFMIiwiTXlTUUwiLCJSdWJ5IiwiUmFpbHMiLCJEZXZlbG9wIGEgY2FyZWVyIiwiVGVhY2ggYW5kIGNvYWNoIG90aGVycyIsIkNhdXNlZCBhIHByb2R1Y3Rpb24gb3V0YWdlIiwiRGVuaWVkIENUT+KAmXMgZGlmZiIsIlB1c2hlZCBkaXJlY3RseSB0byBtYWluIiwiUGl0Y2hlZCBhIGZvdW5kZXIgaW4gYW4gZWxldmF0b3IiLCJEZWxldGVkIDEwMDArIGxpbmVzIG9mIGNvZGUiLCJDb250cmlidXRlZCAxMDArIGxpbmVzIHRvIG9wZW4gc291cmNlIiwiV29rZSB1cCBpbiB0aGUgbWlkZGxlIG9mIHRoZSBuaWdodCBieSBvbmNhbGwiLCJBSSIsIlJpc2sgVGFrZXIiLCJQcm9jZXNzIEluc3RpZ2F0b3IiLCJDdXJpb3VzIFF1ZXN0aW9uZXIiLCJDb3Jwb3JhdGUgQ2xpbWJlciIsIlNlcmlhbCBFbnRyZXByZW5ldXIiLCJDYXJlZXIgU2hhcGVzaGlmdGVyIiwiSGlnaC1ydW5nIFRoaW5rZXIiLCJPdXRsaWVyIiwiRU1FQSIsInF1ZXN0LWNoZWNrYm94ZXMiXSwicmVzdWx0IjpudWxsLCJwb3N0aW5ncyI6W10sImZsb3ciOiJkZWZhdWx0In0=
-  recorded_at: Tue, 12 Dec 2023 18:15:22 GMT
+        eyJzdWJtaXR0ZWRUYWdzIjpbIlNvZnR3YXJlIEVuZ2luZWVyaW5nIiwiQmFja2VuZCBFbmdpbmVlcmluZyIsIkNhbiBob2xkIHlvdXIgb3duIiwiRW5vdWdoIGV4cGVyaWVuY2UgdG8gbWVudG9yIiwiVGVhbSBwcm9ibGVtIHNvbHZlciIsIlN0cmF0ZWdpYyBhbmQgdW5pdmVyc2FsIHByb2JsZW0tc29sdmVyIiwiVGVjaG5pY2FsIGluZmx1ZW5jZXIiLCJQcm9kdWN0IGRyZWFtZXIgYW5kIHNoaXBwZXIiLCJHcmFwaFFMIiwiTXlTUUwiLCJSdWJ5IiwiUmFpbHMiLCJEZXZlbG9wIGEgY2FyZWVyIiwiVGVhY2ggYW5kIGNvYWNoIG90aGVycyIsIkNhdXNlZCBhIHByb2R1Y3Rpb24gb3V0YWdlIiwiRGVuaWVkIENUT+KAmXMgZGlmZiIsIlB1c2hlZCBkaXJlY3RseSB0byBtYWluIiwiRGVsZXRlZCAxMDAwKyBsaW5lcyBvZiBjb2RlIiwiQ29udHJpYnV0ZWQgMTAwKyBsaW5lcyB0byBvcGVuIHNvdXJjZSIsIldva2UgdXAgaW4gdGhlIG1pZGRsZSBvZiB0aGUgbmlnaHQgYnkgb25jYWxsIiwiQUkiLCJSaXNrIFRha2VyIiwiUHJvY2VzcyBJbnN0aWdhdG9yIiwiQ3VyaW91cyBRdWVzdGlvbmVyIiwiQ29ycG9yYXRlIENsaW1iZXIiLCJTZXJpYWwgRW50cmVwcmVuZXVyIiwiQ2FyZWVyIFNoYXBlc2hpZnRlciIsIkhpZ2gtcnVuZyBUaGlua2VyIiwiT3V0bGllciIsIkVNRUEiLCJxdWVzdC1jaGVja2JveGVzIl0sInJlc3VsdCI6eyJpZCI6Ijc0Mzk5OTk1NjU1MDAyMyIsIm5hbWUiOiJTdGFmZiBEZXZlbG9wZXIgLSBNb2JpbGUgRW5naW5lZXJpbmciLCJ1dWlkIjoiNGI2ZjE0OTAtY2EzNy00NDRlLTlkZjgtYTZiZGUyZWIyYjgxIiwiam9iQWRJZCI6IjEzOTk0YmZhLWU2NGMtNGZkMi04YTc0LTY2M2YwYzBiMGI1MyIsImRlZmF1bHRKb2JBZCI6dHJ1ZSwicmVmTnVtYmVyIjoiUkVGNTY5OEYiLCJjb21wYW55Ijp7ImlkZW50aWZpZXIiOiJTaG9waWZ5IiwibmFtZSI6IlNob3BpZnkifSwicmVsZWFzZWREYXRlIjoiMjAyNC0wMS0wNFQwOTowOTo0Ny45NjlaIiwibG9jYXRpb24iOnsiY2l0eSI6IkxvbmRvbiIsInJlZ2lvbiI6IkVuZ2xhbmQiLCJjb3VudHJ5IjoiZ2IiLCJyZW1vdGUiOnRydWUsImxhdGl0dWRlIjoiNTEuNTA3MjE3OCIsImxvbmdpdHVkZSI6Ii0wLjEyNzU4NjIifSwiaW5kdXN0cnkiOnsiaWQiOiJpdF9hbmRfc2VydmljZXMiLCJsYWJlbCI6IkluZm9ybWF0aW9uIFRlY2hub2xvZ3kgQW5kIFNlcnZpY2VzIn0sImRlcGFydG1lbnQiOnsiaWQiOiIyMDE2MjQxIiwibGFiZWwiOiJFbmdpbmVlcmluZyBhbmQgRGV2ZWxvcG1lbnQifSwiZnVuY3Rpb24iOnsiaWQiOiJlbmdpbmVlcmluZyIsImxhYmVsIjoiRW5naW5lZXJpbmcifSwidHlwZU9mRW1wbG95bWVudCI6eyJpZCI6InBlcm1hbmVudCIsImxhYmVsIjoiRnVsbC10aW1lIn0sImV4cGVyaWVuY2VMZXZlbCI6eyJpZCI6Im1pZF9zZW5pb3JfbGV2ZWwiLCJsYWJlbCI6Ik1pZC1TZW5pb3IgTGV2ZWwifSwiY3VzdG9tRmllbGQiOlt7ImZpZWxkSWQiOiI1ZmQzYTVhYWNiOGQ3MzJkNzExNDA4NDgiLCJmaWVsZExhYmVsIjoiUmVnaW9uIiwidmFsdWVJZCI6ImIxMDFkNmRlLTBhZDAtNDVhNy04YjczLWVkMDQ5ZDUyOTdhMCIsInZhbHVlTGFiZWwiOiJFTUVBIn0seyJmaWVsZElkIjoiNWY1YTQyZjBiZjM0YzU2MmUwZWY4NTlkIiwiZmllbGRMYWJlbCI6IkRlcGFydG1lbnQiLCJ2YWx1ZUlkIjoiMjAxNjI0MSIsInZhbHVlTGFiZWwiOiJFbmdpbmVlcmluZyBhbmQgRGV2ZWxvcG1lbnQifSx7ImZpZWxkSWQiOiI1ZjVhNDJmMGJmMzRjNTYyZTBlZjg1OWMiLCJmaWVsZExhYmVsIjoiQnJhbmRzIiwidmFsdWVJZCI6ImRlZmF1bHQiLCJ2YWx1ZUxhYmVsIjoiU2hvcGlmeSJ9LHsiZmllbGRJZCI6IkNPVU5UUlkiLCJmaWVsZExhYmVsIjoiQ291bnRyeSIsInZhbHVlSWQiOiJnYiIsInZhbHVlTGFiZWwiOiJVbml0ZWQgS2luZ2RvbSJ9LHsiZmllbGRJZCI6IjY0MDYwYTFmOTAyOWVmMmFiNjllOGYyYSIsImZpZWxkTGFiZWwiOiJEaXNjaXBsaW5lIiwidmFsdWVJZCI6IkVuZ2luZWVyaW5nIiwidmFsdWVMYWJlbCI6IkVuZ2luZWVyaW5nIn0seyJmaWVsZElkIjoiNjUzNmI5NGY4OGU4MzkyYjdmYTI4OTQzIiwiZmllbGRMYWJlbCI6IkpvYiBUYWdzIiwidmFsdWVMYWJlbCI6IlNvZnR3YXJlIEVuZ2luZWVyaW5nLE1vYmlsZSBFbmdpbmVlcmluZyxUZWFtIHByb2JsZW0gc29sdmVyLFJlYWN0IE5hdGl2ZSxEZXZlbG9wIGEgY2FyZWVyLEVNRUEifV0sInJlZiI6Imh0dHBzOi8vYXBpLnNtYXJ0cmVjcnVpdGVycy5jb20vdjEvY29tcGFuaWVzL1Nob3BpZnkvcG9zdGluZ3MvNzQzOTk5OTU2NTUwMDIzIiwibGFuZ3VhZ2UiOnsiY29kZSI6ImVuIiwibGFiZWwiOiJFbmdsaXNoIiwibGFiZWxOYXRpdmUiOiJFbmdsaXNoIChVUykifX0sInBvc3RpbmdzIjpbeyJpZCI6Ijc0Mzk5OTk1NjU1MDAyMyIsIm5hbWUiOiJTdGFmZiBEZXZlbG9wZXIgLSBNb2JpbGUgRW5naW5lZXJpbmciLCJ1dWlkIjoiNGI2ZjE0OTAtY2EzNy00NDRlLTlkZjgtYTZiZGUyZWIyYjgxIiwiam9iQWRJZCI6IjEzOTk0YmZhLWU2NGMtNGZkMi04YTc0LTY2M2YwYzBiMGI1MyIsImRlZmF1bHRKb2JBZCI6dHJ1ZSwicmVmTnVtYmVyIjoiUkVGNTY5OEYiLCJjb21wYW55Ijp7ImlkZW50aWZpZXIiOiJTaG9waWZ5IiwibmFtZSI6IlNob3BpZnkifSwicmVsZWFzZWREYXRlIjoiMjAyNC0wMS0wNFQwOTowOTo0Ny45NjlaIiwibG9jYXRpb24iOnsiY2l0eSI6IkxvbmRvbiIsInJlZ2lvbiI6IkVuZ2xhbmQiLCJjb3VudHJ5IjoiZ2IiLCJyZW1vdGUiOnRydWUsImxhdGl0dWRlIjoiNTEuNTA3MjE3OCIsImxvbmdpdHVkZSI6Ii0wLjEyNzU4NjIifSwiaW5kdXN0cnkiOnsiaWQiOiJpdF9hbmRfc2VydmljZXMiLCJsYWJlbCI6IkluZm9ybWF0aW9uIFRlY2hub2xvZ3kgQW5kIFNlcnZpY2VzIn0sImRlcGFydG1lbnQiOnsiaWQiOiIyMDE2MjQxIiwibGFiZWwiOiJFbmdpbmVlcmluZyBhbmQgRGV2ZWxvcG1lbnQifSwiZnVuY3Rpb24iOnsiaWQiOiJlbmdpbmVlcmluZyIsImxhYmVsIjoiRW5naW5lZXJpbmcifSwidHlwZU9mRW1wbG95bWVudCI6eyJpZCI6InBlcm1hbmVudCIsImxhYmVsIjoiRnVsbC10aW1lIn0sImV4cGVyaWVuY2VMZXZlbCI6eyJpZCI6Im1pZF9zZW5pb3JfbGV2ZWwiLCJsYWJlbCI6Ik1pZC1TZW5pb3IgTGV2ZWwifSwiY3VzdG9tRmllbGQiOlt7ImZpZWxkSWQiOiI1ZmQzYTVhYWNiOGQ3MzJkNzExNDA4NDgiLCJmaWVsZExhYmVsIjoiUmVnaW9uIiwidmFsdWVJZCI6ImIxMDFkNmRlLTBhZDAtNDVhNy04YjczLWVkMDQ5ZDUyOTdhMCIsInZhbHVlTGFiZWwiOiJFTUVBIn0seyJmaWVsZElkIjoiNWY1YTQyZjBiZjM0YzU2MmUwZWY4NTlkIiwiZmllbGRMYWJlbCI6IkRlcGFydG1lbnQiLCJ2YWx1ZUlkIjoiMjAxNjI0MSIsInZhbHVlTGFiZWwiOiJFbmdpbmVlcmluZyBhbmQgRGV2ZWxvcG1lbnQifSx7ImZpZWxkSWQiOiI1ZjVhNDJmMGJmMzRjNTYyZTBlZjg1OWMiLCJmaWVsZExhYmVsIjoiQnJhbmRzIiwidmFsdWVJZCI6ImRlZmF1bHQiLCJ2YWx1ZUxhYmVsIjoiU2hvcGlmeSJ9LHsiZmllbGRJZCI6IkNPVU5UUlkiLCJmaWVsZExhYmVsIjoiQ291bnRyeSIsInZhbHVlSWQiOiJnYiIsInZhbHVlTGFiZWwiOiJVbml0ZWQgS2luZ2RvbSJ9LHsiZmllbGRJZCI6IjY0MDYwYTFmOTAyOWVmMmFiNjllOGYyYSIsImZpZWxkTGFiZWwiOiJEaXNjaXBsaW5lIiwidmFsdWVJZCI6IkVuZ2luZWVyaW5nIiwidmFsdWVMYWJlbCI6IkVuZ2luZWVyaW5nIn0seyJmaWVsZElkIjoiNjUzNmI5NGY4OGU4MzkyYjdmYTI4OTQzIiwiZmllbGRMYWJlbCI6IkpvYiBUYWdzIiwidmFsdWVMYWJlbCI6IlNvZnR3YXJlIEVuZ2luZWVyaW5nLE1vYmlsZSBFbmdpbmVlcmluZyxUZWFtIHByb2JsZW0gc29sdmVyLFJlYWN0IE5hdGl2ZSxEZXZlbG9wIGEgY2FyZWVyLEVNRUEifV0sInJlZiI6Imh0dHBzOi8vYXBpLnNtYXJ0cmVjcnVpdGVycy5jb20vdjEvY29tcGFuaWVzL1Nob3BpZnkvcG9zdGluZ3MvNzQzOTk5OTU2NTUwMDIzIiwibGFuZ3VhZ2UiOnsiY29kZSI6ImVuIiwibGFiZWwiOiJFbmdsaXNoIiwibGFiZWxOYXRpdmUiOiJFbmdsaXNoIChVUykifX1dLCJmbG93IjoicmVzdWx0cyJ9
+  recorded_at: Sat, 06 Jan 2024 21:27:23 GMT
 recorded_with: VCR 6.2.0

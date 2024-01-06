@@ -18,7 +18,7 @@ RSpec.describe FlatJobs::Companies::Shopify do
   end
 
   describe "#parse_jobs" do
-    it "does not raise error when no jobs are returned" do
+    it "returns jobs" do
       data = vcr_response_data(vcr: "shopify_data").first
 
       result = FlatJobs::Companies::Shopify.new.parse_jobs(data)
@@ -26,24 +26,11 @@ RSpec.describe FlatJobs::Companies::Shopify do
       expect(result.count).not_to be_zero
       job = result.first
       expect(job.company).to eq("shopify")
-      expect(job.notes).to eq("0 jobs found")
-    end
-
-    it "raises an error when jobs are returned" do
-      data = <<~JSON
-        {
-          "result": null,
-          "postings": [{"id": 1}, {"id": 2}],
-          "flow": "default"
-        }
-      JSON
-
-      result = FlatJobs::Companies::Shopify.new.parse_jobs(data)
-
-      expect(result.count).not_to be_zero
-      job = result.first
-      expect(job.company).to eq("shopify")
-      expect(job.notes).to eq("2 jobs found")
+      expect(job.id).to eq("743999956550023")
+      expect(job.title).to eq("Staff Developer - Mobile Engineering")
+      expect(job.url).to eq("https://api.smartrecruiters.com/v1/companies/Shopify/postings/743999956550023")
+      expect(job.location).to eq("London, England")
+      expect(job.notes).to match("Mid-Senior Level")
     end
   end
 end
