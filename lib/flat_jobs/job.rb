@@ -10,11 +10,11 @@ module FlatJobs
 
     def initialize(company:, id:, title:, url:, location:, notes:)
       @company = company
-      @id = id
-      @title = title
-      @url = url
-      @location = location
-      @notes = notes
+      @id = sanitize(id)
+      @title = sanitize(title)
+      @url = sanitize(url)
+      @location = sanitize(location)
+      @notes = sanitize(notes)
     end
 
     def to_csv
@@ -26,6 +26,10 @@ module FlatJobs
     end
 
     private
+
+    def sanitize(value)
+      value&.to_s&.squish
+    end
 
     def to_a
       ATTRS.map do |attr|

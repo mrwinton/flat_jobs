@@ -6,10 +6,10 @@ RSpec.describe FlatJobs::Job do
       job = FlatJobs::Job.new(
         company: "Company",
         id: 1,
-        title: "Staff Engineer",
-        location: "Remote",
-        url: "http://example.com",
-        notes: "Notes"
+        title: "   Staff Engineer",
+        location: "Remote  ",
+        url: "  http://example.com",
+        notes: "Notes  "
       )
 
       result = job.to_csv
