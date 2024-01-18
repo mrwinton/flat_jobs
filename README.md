@@ -29,10 +29,10 @@ Checkout the current [flat jobs].
 FlatJobs uses [nix] to setup dev environment easily. 
 
 ```shell
-# First, install nix. See nix docs for more details.
+# First, install nix - see nix docs for more details
 $ curl -L https://nixos.org/nix/install | sh
 
-# Then clone the repo.
+# Then clone the repo
 $ git clone https://github.com/mrwinton/flat_jobs
 
 # Change to the directory
