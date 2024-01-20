@@ -11,7 +11,7 @@ module FlatJobs
         data_element = doc.at_xpath(data_path)
 
         if data_element.present?
-          data_element.content
+          data_element.to_html
         end
       end
 
