@@ -1,0 +1,494 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://boards.greenhouse.io/gitlab
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.9.0
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 20 Jan 2024 19:33:51 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Etag:
+      - W/"ce552a960f277a3303349812467e5e5a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c03c46f0c9de49c4a40fd17d5d62b1b4
+      X-Runtime:
+      - '0.010425'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+    body:
+      encoding: ASCII-8BIT
+      string: "<!DOCTYPE html>\n<html lang=\"en\">\n<head prefix=\"og: http://ogp.me/ns#\">\n<script
+        type=\"text/javascript\">var _rollbarConfig = {\"accessToken\":\"a9e544e2eb674f56b12d47e1d2ed4cd1\",\"captureUncaught\":true,\"payload\":{\"environment\":\"production\"},\"hostBlockList\":[\"linkedin.com\",\"recruitics.com\"],\"checkIgnore\":function(isUncaught,
+        args, payload) {\n  try {\n    var isPhantomJS = window.navigator.userAgent.match(/phantomjs/i);\n
+        \   var isSplash= window.navigator.userAgent.match(/splash version/i);\n    var
+        firefox = window.navigator.userAgent.match(/(firefox)\\/(\\w+)/i); // JSON,
+        must escape slash\n    var chrome = window.navigator.userAgent.match(/(chrome)\\/(\\w+)/i);
+        // JSON, must escape slash\n\n    var browserExtensionOrAutomationFile = function(frame)
+        {\n      var regExPatterns = [/^chrome-extension/, /^safari-extension/, /^moz-extension/,
+        /^pptr/];\n      return regExPatterns.some(function(regEx) {\n        return
+        regEx.test(frame.filename);\n      });\n    }\n\n    var isBrowserExtensionOrAutomation
+        = payload.body.trace &&\n                                         payload.body.trace.frames
+        &&\n                                         payload.body.trace.frames.some(browserExtensionOrAutomationFile);\n\n
+        \   var isFirefoxLessThan50;\n    if (firefox) {\n      var majorVersion =
+        Number(firefox[2]);\n      isFirefoxLessThan50 = majorVersion < 50\n    }\n\n
+        \   var isChromeLessThan50;\n    if (chrome) {\n      var chromeVersion =
+        Number(chrome[2]);\n      isChromeLessThan50 = chromeVersion < 50;\n    }\n\n
+        \   return Boolean(isPhantomJS) ||\n           Boolean(isSplash) ||\n           Boolean(isFirefoxLessThan50)
+        ||\n           Boolean(isChromeLessThan50) ||\n           Boolean(isBrowserExtensionOrAutomation);\n
+        \ } catch (e) {\n    return true;\n  }\n}\n,\"ignoredMessages\":[\"BetterJsPop\",\"vungle\",\"Script
+        error\",\"awliwidget\"]};</script>\n<script type=\"text/javascript\">!function(r){var
+        e={};function o(n){if(e[n])return e[n].exports;var t=e[n]={i:n,l:!1,exports:{}};return
+        r[n].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.m=r,o.c=e,o.d=function(r,e,n){o.o(r,e)||Object.defineProperty(r,e,{enumerable:!0,get:n})},o.r=function(r){\"undefined\"!=typeof
+        Symbol&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(r,\"__esModule\",{value:!0})},o.t=function(r,e){if(1&e&&(r=o(r)),8&e)return
+        r;if(4&e&&\"object\"==typeof r&&r&&r.__esModule)return r;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,\"default\",{enumerable:!0,value:r}),2&e&&\"string\"!=typeof
+        r)for(var t in r)o.d(n,t,function(e){return r[e]}.bind(null,t));return n},o.n=function(r){var
+        e=r&&r.__esModule?function(){return r.default}:function(){return r};return
+        o.d(e,\"a\",e),e},o.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},o.p=\"\",o(o.s=0)}([function(r,e,o){\"use
+        strict\";var n=o(1),t=o(5);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||\"https://cdn.rollbar.com/rollbarjs/refs/tags/v2.22.0/rollbar.min.js\",_rollbarConfig.async=void
+        0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){\"use
+        strict\";var n=o(2),t=o(3);function a(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error(\"[Rollbar]:
+        Internal error\",r)}catch(r){}}}}var l=0;function i(r,e){this.options=r,this._rollbarOldOnError=null;var
+        o=l++;this.shimId=function(){return o},\"undefined\"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}var
+        s=o(4),d=function(r,e){return new i(r,e)},c=function(r){return new s(d,r)};function
+        u(r){return a((function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new
+        Date};window._rollbarShims[this.shimId()].messages.push(n)}))}i.prototype.loadFull=function(r,e,o,n,t){var
+        l=!1,i=e.createElement(\"script\"),s=e.getElementsByTagName(\"script\")[0],d=s.parentNode;i.crossOrigin=\"\",i.src=n.rollbarJsUrl,o||(i.async=!0),i.onload=i.onreadystatechange=a((function(){if(!(l||this.readyState&&\"loaded\"!==this.readyState&&\"complete\"!==this.readyState)){i.onload=i.onreadystatechange=null;try{d.removeChild(i)}catch(r){}l=!0,function(){var
+        e;if(void 0===r._rollbarDidLoad){e=new Error(\"rollbar.js did not load\");for(var
+        o,n,a,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(a=n.args||[],i=0;i<a.length;++i)if(\"function\"==typeof(l=a[i])){l(e);break}}\"function\"==typeof
+        t&&t(e)}()}})),d.insertBefore(i,s)},i.prototype.wrap=function(r,e,o){try{var
+        n;if(n=\"function\"==typeof e?e:function(){return e||{}},\"function\"!=typeof
+        r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&\"function\"==typeof
+        o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var
+        e=o;throw e&&(\"string\"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var
+        t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return
+        r}};for(var p=\"log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad\".split(\",\"),f=0;f<p.length;++f)i.prototype[p[f]]=u(p[f]);r.exports={setupShim:function(r,e){if(r){var
+        o=e.globalAlias||\"Rollbar\";if(\"object\"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var
+        l=new c(e);return a((function(){e.captureUncaught&&(l._rollbarOldOnError=r.onerror,n.captureUncaughtExceptions(r,l,!0),e.wrapGlobalEventHandlers&&t(r,l,!0)),e.captureUnhandledRejections&&n.captureUnhandledRejections(r,l,!0);var
+        a=e.autoInstrument;return!1!==e.enabled&&(void 0===a||!0===a||\"object\"==typeof
+        a&&a.network)&&r.addEventListener&&(r.addEventListener(\"load\",l.captureLoad.bind(l)),r.addEventListener(\"DOMContentLoaded\",l.captureDomContentLoaded.bind(l))),r[o]=l,l}))()}},Rollbar:c}},function(r,e,o){\"use
+        strict\";function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null);var
+        t=e.handleUncaughtException.apply(e,n);o&&o.apply(r,n),\"anonymous\"===t&&(e.anonymousErrorsPending+=1)}r.exports={captureUncaughtExceptions:function(r,e,o){if(r){var
+        t;if(\"function\"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else
+        if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}e.handleAnonymousErrors();var
+        a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}},captureUnhandledRejections:function(r,e,o){if(r){\"function\"==typeof
+        r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener(\"unhandledrejection\",r._rollbarURH);var
+        n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n=\"[unhandledrejection]
+        error getting `promise` from event\"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){}o||(o=\"[unhandledrejection]
+        error getting `reason` from event\"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener(\"unhandledrejection\",n)}}}},function(r,e,o){\"use
+        strict\";function n(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty(\"addEventListener\")){for(var
+        n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var
+        t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var
+        a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var
+        l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports=function(r,e,o){if(r){var
+        t,a,l=\"EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload\".split(\",\");for(t=0;t<l.length;++t)r[a=l[t]]&&r[a].prototype&&n(e,r[a].prototype,o)}}},function(r,e,o){\"use
+        strict\";function n(r,e){this.impl=r(e,this),this.options=e,function(r){for(var
+        e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return
+        this.impl[r].apply(this.impl,e)}},o=\"log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad\".split(\",\"),n=0;n<o.length;n++)r[o[n]]=e(o[n])}(n.prototype)}n.prototype._swapAndProcessMessages=function(r,e){var
+        o,n,t;for(this.impl=r(this.options);o=e.shift();)n=o.method,t=o.args,this[n]&&\"function\"==typeof
+        this[n]&&(\"captureDomContentLoaded\"===n||\"captureLoad\"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return
+        this},r.exports=n},function(r,e,o){\"use strict\";r.exports=function(r){return
+        function(e){if(!e&&!window._rollbarInitialized){for(var o,n,t=(r=r||{}).globalAlias||\"Rollbar\",a=window.rollbar,l=function(r){return
+        new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);</script>\n
+        \ <title>Jobs at GitLab</title>\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n
+        \ <meta id=\"viewport\" name=\"viewport\" content =\"width=device-width, minimum-scale=1.0\"
+        />\n  <meta id=\"rendered-by\" content=\"jben\" />\n  <link rel=\"stylesheet\"
+        media=\"all\" href=\"https://boards.cdn.greenhouse.io/assets/application-37fb77937add45f47b8aa211c6e36baf590f4e1ddea883f7fa2967cb913854f4.css\"
+        />\n<link rel=\"stylesheet\" media=\"all\" href=\"https://boards.cdn.greenhouse.io/assets/responsive-95ad71d0f9cbcb13adb28ed74687b15c00a64bb1c4a6ab47ab9072493777804c.css\"
+        />\n  \n  \n    <meta property=\"og:title\" content=\"GitLab\"></meta>\n    <meta
+        property=\"og:description\" content=\"\"></meta>\n    <meta property=\"og:url\"
+        content=\"https://boards.greenhouse.io/gitlab\"></meta>\n    <meta property=\"og:type\"
+        content=\"article\"></meta>\n      <meta property=\"og:image\" content=\"https://s2-recruiting.cdn.greenhouse.io/external_greenhouse_job_boards/logos/400/254/300/original/Tanuki_white_square.png?1651072661\"></meta>\n\n</head>\n<body>\n
+        \ <div id=\"wrapper\">\n    <div id=\"main\" class=\"accessible\">\n      \n<div
+        id=\"flash_wrapper\">\n</div>\n\n\n<div id=\"logo\"><a target=\"_blank\" href=\"https://boards.greenhouse.io/gitlab\"><img
+        alt=\"GitLab Logo\" src=\"https://s2-recruiting.cdn.greenhouse.io/external_greenhouse_job_boards/logos/400/254/300/resized/Tanuki_white_square.png?1651072661\"
+        width=\"75\" height=\"75\" /></a></div>\n\n  <h1>GitLab</h1>\n\n  <div id=\"content\">\n
+        \   \n  </div>\n\n    <h2 id=\"board_title\">Current Job Openings</h2>\n\n
+        \   <div class=\"filter-container\">\n      <label class=\"filter-label\"
+        for=\"departments-select\">Department</label>\n\n    <select name=\"departments-select\"
+        id=\"departments-select\">\n      <option value=\"\">All Departments</option>\n
+        \     \n\n<option value=\"4011044002\">\n  Engineering\n</option>\n\n\n<option
+        value=\"4011053002\">\n  &#160;&#160;Customer Support\n</option>\n\n\n\n<option
+        value=\"4012212002\">\n  &#160;&#160;Development\n</option>\n\n\n<option value=\"4034706002\">\n
+        \ &#160;&#160;&#160;&#160;Dev\n</option>\n\n\n\n<option value=\"4034712002\">\n
+        \ &#160;&#160;&#160;&#160;Enablement\n</option>\n\n\n\n\n<option value=\"4016843002\">\n
+        \ &#160;&#160;Infrastructure\n</option>\n\n\n\n<option value=\"4011054002\">\n
+        \ &#160;&#160;Security\n</option>\n\n\n\n\n<option value=\"4021661002\">\n
+        \ G&amp;A\n</option>\n\n\n<option value=\"4011062002\">\n  &#160;&#160;Business
+        Technology\n</option>\n\n\n<option value=\"4069214002\">\n  &#160;&#160;&#160;&#160;Corporate
+        IT\n</option>\n\n\n\n<option value=\"4069215002\">\n  &#160;&#160;&#160;&#160;Enterprise
+        Applications\n</option>\n\n\n\n\n<option value=\"4011063002\">\n  &#160;&#160;Finance\n</option>\n\n\n<option
+        value=\"4043187002\">\n  &#160;&#160;&#160;&#160;Accounting\n</option>\n\n\n\n\n<option
+        value=\"4043188002\">\n  &#160;&#160;Legal &amp; Corporate Affairs\n</option>\n\n\n\n<option
+        value=\"4063692002\">\n  &#160;&#160;People Operations\n</option>\n\n\n\n<option
+        value=\"4013092002\">\n  &#160;&#160;People Success\n</option>\n\n\n\n<option
+        value=\"4011065002\">\n  &#160;&#160;Talent Acquisition\n</option>\n\n\n\n<option
+        value=\"4070223002\">\n  &#160;&#160;Total Rewards\n</option>\n\n\n\n\n<option
+        value=\"4011045002\">\n  Marketing\n</option>\n\n\n<option value=\"4054421002\">\n
+        \ &#160;&#160;Communications\n</option>\n\n\n\n<option value=\"4011061002\">\n
+        \ &#160;&#160;Product Marketing\n</option>\n\n\n\n<option value=\"4011059002\">\n
+        \ &#160;&#160;Sales Development\n</option>\n\n\n\n\n<option value=\"4043190002\">\n
+        \ Product\n</option>\n\n\n<option value=\"4011048002\">\n  &#160;&#160;Product
+        Management\n</option>\n\n\n\n<option value=\"4021657002\">\n  &#160;&#160;UX\n</option>\n\n\n\n\n<option
+        value=\"4011049002\">\n  Sales\n</option>\n\n\n<option value=\"4021651002\">\n
+        \ &#160;&#160;Commercial Sales\n</option>\n\n\n\n<option value=\"4011043002\">\n
+        \ &#160;&#160;Customer Success\n</option>\n\n\n<option value=\"4011052002\">\n
+        \ &#160;&#160;&#160;&#160;SA\n</option>\n\n\n\n\n<option value=\"4021650002\">\n
+        \ &#160;&#160;Enterprise Sales\n</option>\n\n\n<option value=\"4035464002\">\n
+        \ &#160;&#160;&#160;&#160;Enterprise Sales - Public Sector\n</option>\n\n\n\n\n<option
+        value=\"4021652002\">\n  &#160;&#160;Field Operations\n</option>\n\n\n\n<option
+        value=\"4052739002\">\n  &#160;&#160;Practice Management\n</option>\n\n\n\n
+        \   </select>\n  </div>\n\n\n\n\n<div id=\"filter-count\"></div>\n\n  \n\n<section
+        class=\"level-0\">\n  <h3 id=\"4011044002\">Engineering</h3>\n\n  \n  \n\n<section
+        class=\"child level-1\">\n  <h4 id=\"4011053002\">Customer Support</h4>\n\n
+        \ <div class=\"opening\" department_id=\"4011044002,4011053002\" office_id=\"4019551002\"
+        data-office-4019551002=\"true\" data-department-4011044002=\"true\" data-department-4011053002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/6831303002\">Support Engineer
+        (US Federal)</a>\n  <br/>\n  <span class=\"location\">Remote, Americas</span>\n</div>\n
+        \ \n</section>\n\n<section class=\"child level-1\">\n  <h4 id=\"4012212002\">Development</h4>\n\n
+        \ <div class=\"opening\" department_id=\"4011044002,4012212002\" office_id=\"\"
+        data-department-4011044002=\"true\" data-department-4012212002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7060566002\">Backend Engineer,
+        AI Powered: AI Framework</a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div>\n
+        \ \n\n<section class=\"child level-2\">\n  <h5 id=\"4034706002\">Dev</h5>\n\n
+        \ <div class=\"opening\" department_id=\"4011044002,4012212002,4034706002\"
+        office_id=\"\" data-department-4011044002=\"true\" data-department-4012212002=\"true\"
+        data-department-4034706002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7033814002\">Backend
+        Engineer, AI Powered: Duo Chat (EMEA)</a>\n  <br/>\n  <span class=\"location\">Remote,
+        EMEA</span>\n</div><div class=\"opening\" department_id=\"4011044002,4012212002,4034706002\"
+        office_id=\"\" data-department-4011044002=\"true\" data-department-4012212002=\"true\"
+        data-department-4034706002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7062279002\">Backend
+        Engineer, C# (+ Kotlin), Create: Editor Extensions </a>\n  <br/>\n  <span
+        class=\"location\">Remote</span>\n</div><div class=\"opening\" department_id=\"4011044002,4012212002,4034706002\"
+        office_id=\"\" data-department-4011044002=\"true\" data-department-4012212002=\"true\"
+        data-department-4034706002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7062553002\">Backend
+        Engineer, Create: Code Creation (AI)</a>\n  <br/>\n  <span class=\"location\">Remote,
+        North America</span>\n</div><div class=\"opening\" department_id=\"4011044002,4012212002,4034706002\"
+        office_id=\"\" data-department-4011044002=\"true\" data-department-4012212002=\"true\"
+        data-department-4034706002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7029743002\">Backend
+        Engineer, Create: Code Creation (AI)</a>\n  <br/>\n  <span class=\"location\">Remote,
+        EMEA</span>\n</div><div class=\"opening\" department_id=\"4011044002,4012212002,4034706002\"
+        office_id=\"\" data-department-4011044002=\"true\" data-department-4012212002=\"true\"
+        data-department-4034706002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7060581002\">Engineering
+        Manager, AI Powered: Duo Chat</a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div><div
+        class=\"opening\" department_id=\"4011044002,4012212002,4034706002\" office_id=\"\"
+        data-department-4011044002=\"true\" data-department-4012212002=\"true\" data-department-4034706002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7060552002\">Frontend Engineer,
+        AI Powered: AI Framework</a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div><div
+        class=\"opening\" department_id=\"4011044002,4012212002,4034706002\" office_id=\"\"
+        data-department-4011044002=\"true\" data-department-4012212002=\"true\" data-department-4034706002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7033807002\">Frontend Engineer,
+        AI Powered: Duo Chat (EMEA)</a>\n  <br/>\n  <span class=\"location\">Remote,
+        EMEA</span>\n</div><div class=\"opening\" department_id=\"4011044002,4012212002,4034706002\"
+        office_id=\"\" data-department-4011044002=\"true\" data-department-4012212002=\"true\"
+        data-department-4034706002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7056983002\">Frontend
+        Engineer, Plan: Product Planning (Intermediate/Vue)</a>\n  <br/>\n  <span
+        class=\"location\">Remote</span>\n</div><div class=\"opening\" department_id=\"4011044002,4012212002,4034706002\"
+        office_id=\"\" data-department-4011044002=\"true\" data-department-4012212002=\"true\"
+        data-department-4034706002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7021017002\">Fullstack
+        Engineer, Typescript </a>\n  <br/>\n  <span class=\"location\">Remote, North
+        America</span>\n</div><div class=\"opening\" department_id=\"4011044002,4012212002,4034706002\"
+        office_id=\"\" data-department-4011044002=\"true\" data-department-4012212002=\"true\"
+        data-department-4034706002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7062181002\">Fullstack
+        Engineer, Typescript (+ Lua) </a>\n  <br/>\n  <span class=\"location\">Remote,
+        North America</span>\n</div>\n  \n</section>\n\n<section class=\"child level-2\">\n
+        \ <h5 id=\"4034712002\">Enablement</h5>\n\n  <div class=\"opening\" department_id=\"4011044002,4012212002,4034712002\"
+        office_id=\"\" data-department-4011044002=\"true\" data-department-4012212002=\"true\"
+        data-department-4034712002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/6991813002\">Engineering
+        Manager, Distribution: Build</a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div>\n
+        \ \n</section>\n</section>\n\n<section class=\"child level-1\">\n  <h4 id=\"4016843002\">Infrastructure</h4>\n\n
+        \ <div class=\"opening\" department_id=\"4011044002,4016843002\" office_id=\"\"
+        data-department-4011044002=\"true\" data-department-4016843002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7053540002\">Backend Engineer,
+        Distribution: Deploy (Golang) </a>\n  <br/>\n  <span class=\"location\">Remote,
+        APAC</span>\n</div><div class=\"opening\" department_id=\"4011044002,4016843002\"
+        office_id=\"\" data-department-4011044002=\"true\" data-department-4016843002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7037627002\">Intermediate Site
+        Reliability Engineer, Operations (APAC)</a>\n  <br/>\n  <span class=\"location\">Remote,
+        India</span>\n</div><div class=\"opening\" department_id=\"4011044002,4016843002\"
+        office_id=\"\" data-department-4011044002=\"true\" data-department-4016843002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7086362002\">Intermediate Site
+        Reliability Engineer, Operations (APAC)</a>\n  <br/>\n  <span class=\"location\">Remote,
+        Philippines</span>\n</div><div class=\"opening\" department_id=\"4011044002,4016843002\"
+        office_id=\"\" data-department-4011044002=\"true\" data-department-4016843002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7054466002\">Senior Frontend
+        Engineer, Engineering Productivity</a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div><div
+        class=\"opening\" department_id=\"4011044002,4016843002\" office_id=\"4019590002\"
+        data-office-4019590002=\"true\" data-department-4011044002=\"true\" data-department-4016843002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7058337002\">Senior Site Reliability
+        Engineer, Environment Automation, APAC</a>\n  <br/>\n  <span class=\"location\">Remote,
+        APAC</span>\n</div><div class=\"opening\" department_id=\"4011044002,4016843002\"
+        office_id=\"\" data-department-4011044002=\"true\" data-department-4016843002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7044099002\">Senior Site Reliability
+        Engineer,Scalability: Practices</a>\n  <br/>\n  <span class=\"location\">Remote,
+        Americas</span>\n</div><div class=\"opening\" department_id=\"4011044002,4016843002\"
+        office_id=\"4019590002\" data-office-4019590002=\"true\" data-department-4011044002=\"true\"
+        data-department-4016843002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7058333002\">Site
+        Reliability Engineer, APAC</a>\n  <br/>\n  <span class=\"location\">Remote,
+        APAC</span>\n</div><div class=\"opening\" department_id=\"4011044002,4016843002\"
+        office_id=\"4019551002\" data-office-4019551002=\"true\" data-department-4011044002=\"true\"
+        data-department-4016843002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7058341002\">Site
+        Reliability Engineer, Environment Automation, AMER</a>\n  <br/>\n  <span class=\"location\">Remote,
+        Americas</span>\n</div><div class=\"opening\" department_id=\"4011044002,4016843002\"
+        office_id=\"4019551002\" data-office-4019551002=\"true\" data-department-4011044002=\"true\"
+        data-department-4016843002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7013434002\">Site
+        Reliability Engineer, US Public Sector Services</a>\n  <br/>\n  <span class=\"location\">Remote,
+        US</span>\n</div>\n  \n</section>\n\n<section class=\"child level-1\">\n  <h4
+        id=\"4011054002\">Security</h4>\n\n  <div class=\"opening\" department_id=\"4011044002,4011054002\"
+        office_id=\"\" data-department-4011044002=\"true\" data-department-4011054002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7046030002\">Manager, Security
+        Engineering - Identity Engineering </a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div><div
+        class=\"opening\" department_id=\"4011044002,4011054002\" office_id=\"\" data-department-4011044002=\"true\"
+        data-department-4011054002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7056513002\">Senior
+        Security Engineer, Red Team </a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div><div
+        class=\"opening\" department_id=\"4011044002,4011054002\" office_id=\"\" data-department-4011044002=\"true\"
+        data-department-4011054002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7103745002\">Senior
+        Security Software Engineer, Trust &amp; Safety</a>\n  <br/>\n  <span class=\"location\">Remote,
+        EMEA</span>\n</div><div class=\"opening\" department_id=\"4011044002,4011054002\"
+        office_id=\"\" data-department-4011044002=\"true\" data-department-4011054002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7088531002\">Sr. Security Software
+        Engineer, Trust &amp; Safety</a>\n  <br/>\n  <span class=\"location\">Remote,
+        APAC</span>\n</div>\n  \n</section>\n</section>\n\n<section class=\"level-0\">\n
+        \ <h3 id=\"4021661002\">G&amp;A</h3>\n\n  \n  \n\n<section class=\"child level-1\">\n
+        \ <h4 id=\"4011062002\">Business Technology</h4>\n\n  \n  \n\n<section class=\"child
+        level-2\">\n  <h5 id=\"4069214002\">Corporate IT</h5>\n\n  <div class=\"opening\"
+        department_id=\"4011062002,4021661002,4069214002\" office_id=\"4040904002\"
+        data-office-4040904002=\"true\" data-department-4011062002=\"true\" data-department-4021661002=\"true\"
+        data-department-4069214002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7052677002\">Director,
+        CRM Systems </a>\n  <br/>\n  <span class=\"location\">Remote, North America</span>\n</div>\n
+        \ \n</section>\n\n<section class=\"child level-2\">\n  <h5 id=\"4069215002\">Enterprise
+        Applications</h5>\n\n  <div class=\"opening\" department_id=\"4011062002,4021661002,4069215002\"
+        office_id=\"4040904002\" data-office-4040904002=\"true\" data-department-4011062002=\"true\"
+        data-department-4021661002=\"true\" data-department-4069215002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7069888002\">Manager, CRM Systems
+        </a>\n  <br/>\n  <span class=\"location\">Remote, Americas</span>\n</div>\n
+        \ \n</section>\n</section>\n\n<section class=\"child level-1\">\n  <h4 id=\"4011063002\">Finance</h4>\n\n
+        \ <div class=\"opening\" department_id=\"4011063002,4021661002\" office_id=\"\"
+        data-department-4011063002=\"true\" data-department-4021661002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7049129002\">Senior Financial
+        Analyst, R&amp;D</a>\n  <br/>\n  <span class=\"location\">Remote, North America</span>\n</div><div
+        class=\"opening\" department_id=\"4011063002,4021661002\" office_id=\"\" data-department-4011063002=\"true\"
+        data-department-4021661002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7015313002\">VP,
+        Investor Relations</a>\n  <br/>\n  <span class=\"location\">Remote, US</span>\n</div>\n
+        \ \n\n<section class=\"child level-2\">\n  <h5 id=\"4043187002\">Accounting</h5>\n\n
+        \ <div class=\"opening\" department_id=\"4011063002,4021661002,4043187002\"
+        office_id=\"4019553002\" data-office-4019553002=\"true\" data-department-4011063002=\"true\"
+        data-department-4021661002=\"true\" data-department-4043187002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7013110002\">Senior Manager,
+        International Accounting (EMEA)</a>\n  <br/>\n  <span class=\"location\">Remote,
+        EMEA</span>\n</div>\n  \n</section>\n</section>\n\n<section class=\"child
+        level-1\">\n  <h4 id=\"4043188002\">Legal &amp; Corporate Affairs</h4>\n\n
+        \ <div class=\"opening\" department_id=\"4021661002,4043188002\" office_id=\"\"
+        data-department-4021661002=\"true\" data-department-4043188002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7049331002\">Senior Director,
+        Public Policy</a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div>\n
+        \ \n</section>\n\n<section class=\"child level-1\">\n  <h4 id=\"4063692002\">People
+        Operations</h4>\n\n  <div class=\"opening\" department_id=\"4021661002,4063692002\"
+        office_id=\"\" data-department-4021661002=\"true\" data-department-4063692002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7087666002\">Senior HRIS Analyst
+        </a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div>\n  \n</section>\n\n<section
+        class=\"child level-1\">\n  <h4 id=\"4013092002\">People Success</h4>\n\n
+        \ <div class=\"opening\" department_id=\"4013092002,4021661002\" office_id=\"\"
+        data-department-4013092002=\"true\" data-department-4021661002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/6981377002\">Senior People Operations
+        Program Manager</a>\n  <br/>\n  <span class=\"location\">Remote, US</span>\n</div>\n
+        \ \n</section>\n\n<section class=\"child level-1\">\n  <h4 id=\"4011065002\">Talent
+        Acquisition</h4>\n\n  <div class=\"opening\" department_id=\"4011065002,4021661002\"
+        office_id=\"4040904002\" data-office-4040904002=\"true\" data-department-4011065002=\"true\"
+        data-department-4021661002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7094253002\">Senior
+        Manager, Technical Recruiting</a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div>\n
+        \ \n</section>\n\n<section class=\"child level-1\">\n  <h4 id=\"4070223002\">Total
+        Rewards</h4>\n\n  <div class=\"opening\" department_id=\"4021661002,4070223002\"
+        office_id=\"\" data-department-4021661002=\"true\" data-department-4070223002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7098786002\">Benefits Program
+        Manager</a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div><div
+        class=\"opening\" department_id=\"4021661002,4070223002\" office_id=\"\" data-department-4021661002=\"true\"
+        data-department-4070223002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7076630002\">Compensation
+        Program Manager </a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div>\n
+        \ \n</section>\n</section>\n\n<section class=\"level-0\">\n  <h3 id=\"4011045002\">Marketing</h3>\n\n
+        \ \n  \n\n<section class=\"child level-1\">\n  <h4 id=\"4054421002\">Communications</h4>\n\n
+        \ <div class=\"opening\" department_id=\"4011045002,4054421002\" office_id=\"\"
+        data-department-4011045002=\"true\" data-department-4054421002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7029555002\">Senior Manager,
+        Social Media </a>\n  <br/>\n  <span class=\"location\">Remote, US</span>\n</div>\n
+        \ \n</section>\n\n<section class=\"child level-1\">\n  <h4 id=\"4011061002\">Product
+        Marketing</h4>\n\n  <div class=\"opening\" department_id=\"4011045002,4011061002\"
+        office_id=\"\" data-department-4011045002=\"true\" data-department-4011061002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7081802002\">Senior Product
+        Marketing Manager, Public Sector </a>\n  <br/>\n  <span class=\"location\">Remote,
+        US</span>\n</div>\n  \n</section>\n\n<section class=\"child level-1\">\n  <h4
+        id=\"4011059002\">Sales Development</h4>\n\n  <div class=\"opening\" department_id=\"4011045002,4011059002\"
+        office_id=\"4019551002\" data-office-4019551002=\"true\" data-department-4011045002=\"true\"
+        data-department-4011059002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/6674337002\">Business
+        Development Representative (AMER)</a>\n  <br/>\n  <span class=\"location\">Remote,
+        North America</span>\n</div><div class=\"opening\" department_id=\"4011045002,4011059002\"
+        office_id=\"4019590002\" data-office-4019590002=\"true\" data-department-4011045002=\"true\"
+        data-department-4011059002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7075246002\">Business
+        Development Representative - Australia</a>\n  <br/>\n  <span class=\"location\">Remote,
+        Australia</span>\n</div><div class=\"opening\" department_id=\"4011045002,4011059002\"
+        office_id=\"4019553002\" data-office-4019553002=\"true\" data-department-4011045002=\"true\"
+        data-department-4011059002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7069678002\">Business
+        Development Representative (EMEA - German Speaking)</a>\n  <br/>\n  <span
+        class=\"location\">Remote, EMEA</span>\n</div><div class=\"opening\" department_id=\"4011045002,4011059002\"
+        office_id=\"4019553002\" data-office-4019553002=\"true\" data-department-4011045002=\"true\"
+        data-department-4011059002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7072564002\">Business
+        Development Representative (EMEA - UK &amp; Ireland)</a>\n  <br/>\n  <span
+        class=\"location\">Remote, EMEA</span>\n</div><div class=\"opening\" department_id=\"4011045002,4011059002\"
+        office_id=\"4019553002\" data-office-4019553002=\"true\" data-department-4011045002=\"true\"
+        data-department-4011059002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7071493002\">Manager,
+        Business Development (EMEA)</a>\n  <br/>\n  <span class=\"location\">Remote,
+        Europe</span>\n</div><div class=\"opening\" department_id=\"4011045002,4011059002\"
+        office_id=\"4019553002\" data-office-4019553002=\"true\" data-department-4011045002=\"true\"
+        data-department-4011059002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7065681002\">Sales
+        Development Representative (EMEA - German Speaking)</a>\n  <br/>\n  <span
+        class=\"location\">Remote, EMEA</span>\n</div>\n  \n</section>\n</section>\n\n<section
+        class=\"level-0\">\n  <h3 id=\"4043190002\">Product</h3>\n\n  \n  \n\n<section
+        class=\"child level-1\">\n  <h4 id=\"4011048002\">Product Management</h4>\n\n
+        \ <div class=\"opening\" department_id=\"4011048002,4043190002\" office_id=\"\"
+        data-department-4011048002=\"true\" data-department-4043190002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/6459604002\">Director of Product,
+        Pricing</a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div><div
+        class=\"opening\" department_id=\"4011048002,4043190002\" office_id=\"\" data-department-4011048002=\"true\"
+        data-department-4043190002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7098447002\">Senior
+        Product Manager, Compliance </a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div><div
+        class=\"opening\" department_id=\"4011048002,4043190002\" office_id=\"\" data-department-4011048002=\"true\"
+        data-department-4043190002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7055699002\">Senior
+        Product Manager, Product Analytics </a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div>\n
+        \ \n</section>\n\n<section class=\"child level-1\">\n  <h4 id=\"4021657002\">UX</h4>\n\n
+        \ <div class=\"opening\" department_id=\"4021657002,4043190002\" office_id=\"\"
+        data-department-4021657002=\"true\" data-department-4043190002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7089799002\">Product Designer,
+        Switchboard (EMEA or APAC based)</a>\n  <br/>\n  <span class=\"location\">Remote,
+        APAC</span>\n</div><div class=\"opening\" department_id=\"4021657002,4043190002\"
+        office_id=\"\" data-department-4021657002=\"true\" data-department-4043190002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7089796002\">Product Designer,
+        Switchboard (EMEA or APAC based)</a>\n  <br/>\n  <span class=\"location\">Remote,
+        EMEA</span>\n</div><div class=\"opening\" department_id=\"4021657002,4043190002\"
+        office_id=\"\" data-department-4021657002=\"true\" data-department-4043190002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7054340002\">Senior Product
+        Designer, AI</a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div><div
+        class=\"opening\" department_id=\"4021657002,4043190002\" office_id=\"\" data-department-4021657002=\"true\"
+        data-department-4043190002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7022641002\">Senior
+        Product Designer, Fulfillment</a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div>\n
+        \ \n</section>\n</section>\n\n<section class=\"level-0\">\n  <h3 id=\"4011049002\">Sales</h3>\n\n
+        \ \n  \n\n<section class=\"child level-1\">\n  <h4 id=\"4021651002\">Commercial
+        Sales</h4>\n\n  <div class=\"opening\" department_id=\"4011049002,4021651002\"
+        office_id=\"4040903002\" data-office-4040903002=\"true\" data-department-4011049002=\"true\"
+        data-department-4021651002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/6884503002\">Account
+        Executive - Mid Market - DACH</a>\n  <br/>\n  <span class=\"location\">Remote,
+        Germany</span>\n</div><div class=\"opening\" department_id=\"4011049002,4021651002\"
+        office_id=\"4019553002\" data-office-4019553002=\"true\" data-department-4011049002=\"true\"
+        data-department-4021651002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7062795002\">Account
+        Executive - Mid Market - Nordics</a>\n  <br/>\n  <span class=\"location\">Remote,
+        EMEA</span>\n</div>\n  \n</section>\n\n<section class=\"child level-1\">\n
+        \ <h4 id=\"4011043002\">Customer Success</h4>\n\n  <div class=\"opening\"
+        department_id=\"4011043002,4011049002\" office_id=\"4019553002\" data-office-4019553002=\"true\"
+        data-department-4011043002=\"true\" data-department-4011049002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7065590002\">Solutions Architect
+        DACH</a>\n  <br/>\n  <span class=\"location\">Remote, Germany</span>\n</div><div
+        class=\"opening\" department_id=\"4011043002,4011049002\" office_id=\"4019553002\"
+        data-office-4019553002=\"true\" data-department-4011043002=\"true\" data-department-4011049002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7065573002\">Solutions Architect,
+        Nordics </a>\n  <br/>\n  <span class=\"location\">Remote, Sweden</span>\n</div>\n
+        \ \n\n<section class=\"child level-2\">\n  <h5 id=\"4011052002\">SA</h5>\n\n
+        \ <div class=\"opening\" department_id=\"4011043002,4011049002,4011052002\"
+        office_id=\"4019551002,4005394002\" data-office-4019551002=\"true\" data-office-4005394002=\"true\"
+        data-department-4011043002=\"true\" data-department-4011049002=\"true\" data-department-4011052002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7057265002\">Field CTO</a>\n
+        \ <br/>\n  <span class=\"location\">Remote, North America</span>\n</div><div
+        class=\"opening\" department_id=\"4011043002,4011049002,4011052002\" office_id=\"4019553002\"
+        data-office-4019553002=\"true\" data-department-4011043002=\"true\" data-department-4011049002=\"true\"
+        data-department-4011052002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/6949764002\">Field
+        CTO - EMEA </a>\n  <br/>\n  <span class=\"location\">Remote, EMEA</span>\n</div><div
+        class=\"opening\" department_id=\"4011043002,4011049002,4011052002\" office_id=\"4019551002,4005394002\"
+        data-office-4019551002=\"true\" data-office-4005394002=\"true\" data-department-4011043002=\"true\"
+        data-department-4011049002=\"true\" data-department-4011052002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/6996119002\">Principal Solutions
+        Architect</a>\n  <br/>\n  <span class=\"location\">Remote, North America</span>\n</div><div
+        class=\"opening\" department_id=\"4011043002,4011049002,4011052002\" office_id=\"4019590002\"
+        data-office-4019590002=\"true\" data-department-4011043002=\"true\" data-department-4011049002=\"true\"
+        data-department-4011052002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7028192002\">Senior
+        Solutions Architect - India (Bangalore, Mumbai or Delhi)</a>\n  <br/>\n  <span
+        class=\"location\">Remote, APAC</span>\n</div>\n  \n</section>\n</section>\n\n<section
+        class=\"child level-1\">\n  <h4 id=\"4021650002\">Enterprise Sales</h4>\n\n
+        \ <div class=\"opening\" department_id=\"4011049002,4021650002\" office_id=\"4019553002\"
+        data-office-4019553002=\"true\" data-department-4011049002=\"true\" data-department-4021650002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7079335002\">Executive Business
+        Administrator, Sales - EMEA (Paris)</a>\n  <br/>\n  <span class=\"location\">Remote,
+        France</span>\n</div><div class=\"opening\" department_id=\"4011049002,4021650002\"
+        office_id=\"4019553002\" data-office-4019553002=\"true\" data-department-4011049002=\"true\"
+        data-department-4021650002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7067663002\">Strategic
+        Account Executive, DACH - Remote, Germany</a>\n  <br/>\n  <span class=\"location\">Remote,
+        Germany</span>\n</div><div class=\"opening\" department_id=\"4011049002,4021650002\"
+        office_id=\"4040906002\" data-office-4040906002=\"true\" data-department-4011049002=\"true\"
+        data-department-4021650002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7064885002\">Strategic
+        Enterprise Account Executive - Japan</a>\n  <br/>\n  <span class=\"location\">Remote,
+        Japan</span>\n</div>\n  \n\n<section class=\"child level-2\">\n  <h5 id=\"4035464002\">Enterprise
+        Sales - Public Sector</h5>\n\n  <div class=\"opening\" department_id=\"4011049002,4021650002,4035464002\"
+        office_id=\"\" data-department-4011049002=\"true\" data-department-4021650002=\"true\"
+        data-department-4035464002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7046331002\">Strategic
+        Account Executive, Intelligence Community</a>\n  <br/>\n  <span class=\"location\">Remote,
+        US</span>\n</div>\n  \n</section>\n</section>\n\n<section class=\"child level-1\">\n
+        \ <h4 id=\"4021652002\">Field Operations</h4>\n\n  <div class=\"opening\"
+        department_id=\"4011049002,4021652002\" office_id=\"\" data-department-4011049002=\"true\"
+        data-department-4021652002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7090931002\">Deal
+        Desk Manager</a>\n  <br/>\n  <span class=\"location\">Remote, US</span>\n</div><div
+        class=\"opening\" department_id=\"4011049002,4021652002\" office_id=\"\" data-department-4011049002=\"true\"
+        data-department-4021652002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7098111002\">Deal
+        Strategist</a>\n  <br/>\n  <span class=\"location\">Remote, US</span>\n</div><div
+        class=\"opening\" department_id=\"4011049002,4021652002\" office_id=\"4019553002\"
+        data-office-4019553002=\"true\" data-department-4011049002=\"true\" data-department-4021652002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7065952002\">Deal Strategist,
+        DACH - Remote, Germany</a>\n  <br/>\n  <span class=\"location\">Remote</span>\n</div><div
+        class=\"opening\" department_id=\"4011049002,4021652002\" office_id=\"\" data-department-4011049002=\"true\"
+        data-department-4021652002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7062578002\">Senior
+        Partner Operations Analyst</a>\n  <br/>\n  <span class=\"location\">Remote,
+        US</span>\n</div><div class=\"opening\" department_id=\"4011049002,4021652002\"
+        office_id=\"4040904002\" data-office-4040904002=\"true\" data-department-4011049002=\"true\"
+        data-department-4021652002=\"true\">\n  <a data-mapped=\"true\" href=\"/gitlab/jobs/7027303002\">Senior
+        Sales Strategy Analyst (Professional Services)</a>\n  <br/>\n  <span class=\"location\">Remote,
+        North America</span>\n</div>\n  \n</section>\n\n<section class=\"child level-1\">\n
+        \ <h4 id=\"4052739002\">Practice Management</h4>\n\n  <div class=\"opening\"
+        department_id=\"4011049002,4052739002\" office_id=\"4019553002\" data-office-4019553002=\"true\"
+        data-department-4011049002=\"true\" data-department-4052739002=\"true\">\n
+        \ <a data-mapped=\"true\" href=\"/gitlab/jobs/7053984002\">Senior Professional
+        Services Engagement Manager (Western Europe)</a>\n  <br/>\n  <span class=\"location\">Remote,
+        Europe</span>\n</div>\n  \n</section>\n</section>\n  \n\n\n\n    </div>\n
+        \ </div>\n\n      <div id=\"footer\">\n    <span>Powered by</span>&nbsp;<a
+        target=\"_blank\" href=\"http://www.greenhouse.io/\">\n      <img border=\"0\"
+        alt=\"Greenhouse Logo\" id=\"gh_logo\" src=\"https://boards.cdn.greenhouse.io/assets/greenhouse-in-app-logo-green-236d994ee39682bb46e214901c264de0df582c97e949e7c854c3531b79f00240.svg\"
+        width=\"100\" height=\"30\" />\n</a>    <div class=\"privacy-policy\">\n      Read
+        our <a href=\"http://www.greenhouse.io/privacy-policy\">Privacy Policy</a>\n
+        \   </div>\n  </div>\n\n      <script src=\"https://boards.cdn.greenhouse.io/assets/application-117d8e9638784cef2f4c8e04346a031023417010284e5f30cb9346d58dcaac54.js\"></script>\n\n
+        \ <script src=\"https://boards.cdn.greenhouse.io/assets/index_init-b257fc242bdcd2b7d88beddbb8bbb8b171d1e40ebf2de22fd9f149d3bcfd82c2.js\"></script>
+        \ \n\n  </body>\n</html>\n"
+  recorded_at: Sat, 20 Jan 2024 19:33:51 GMT
+recorded_with: VCR 6.2.0
