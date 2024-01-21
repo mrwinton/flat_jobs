@@ -15,8 +15,7 @@ module FlatJobs
 
       def parse_jobs(data)
         doc = Nokogiri::HTML(data)
-        doc.at_xpath("//h3[contains(text(), 'Engineering')]/following-sibling::div")
-          .xpath("//div[@role='listitem']")
+        doc.xpath("//*[@class='w-tab-pane w--tab-active']//h3[contains(text(), 'Engineering')]/following-sibling::div//div[@role='listitem']")
           .map { |job| parse_job(job) }
       end
 

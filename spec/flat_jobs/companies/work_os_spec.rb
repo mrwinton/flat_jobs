@@ -26,10 +26,10 @@ RSpec.describe FlatJobs::Companies::WorkOS do
       expect(result.count).not_to be_zero
       job = result.first
       expect(job.company).to eq("work_os")
-      expect(job.id).to eq("dfde45ea-18fe-4aef-9660-0374f13ebe1c")
-      expect(job.title).to eq("Product Designer")
-      expect(job.url).to eq("https://jobs.lever.co/workos/dfde45ea-18fe-4aef-9660-0374f13ebe1c")
-      expect(job.location).to eq("Americas and European time zones")
+      expect(job.id).to eq("90725c1f-c826-4520-946a-2c6ff6103882")
+      expect(job.title).to eq("Engineering Manager - Infrastructure and Security")
+      expect(job.url).to eq("https://jobs.lever.co/workos/90725c1f-c826-4520-946a-2c6ff6103882")
+      expect(job.location).to eq("USA time zones")
       expect(job.notes).to eq("")
     end
   end
