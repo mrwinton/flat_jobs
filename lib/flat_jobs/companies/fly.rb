@@ -5,8 +5,14 @@ module FlatJobs
     class Fly < FlatJobs::Company
       FlatJobs.register_company(:fly, new)
 
-      def fetch_data
-        FlatJobs::Client.get(**REQUEST_OPTS).body
+      def fetch_data(data_path: "main section")
+        response = FlatJobs::Client.get(**REQUEST_OPTS)
+        doc = Nokogiri::HTML(response.body)
+        data_element = doc.at_css(data_path)
+
+        if data_element.present?
+          data_element.to_html
+        end
       end
 
       def data_file_type
@@ -15,7 +21,7 @@ module FlatJobs
 
       def parse_jobs(data)
         doc = Nokogiri::HTML(data)
-        doc.css("main section article")
+        doc.css("article")
           .select { |job| engineering_job_present?(job) }
           .map { |job| parse_job(job) }
       end

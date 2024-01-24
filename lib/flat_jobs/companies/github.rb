@@ -6,7 +6,10 @@ module FlatJobs
       FlatJobs.register_company(:github, new)
 
       def fetch_data
-        FlatJobs::Client.get(**REQUEST_OPTS).body
+        response = FlatJobs::Client.get(**REQUEST_OPTS)
+        data = JSON.parse(response.body, symbolize_names: true)
+        data.delete(:metadata)
+        data.to_json
       end
 
       def data_file_type

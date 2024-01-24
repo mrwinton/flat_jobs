@@ -13,7 +13,7 @@ module FlatJobs
         data_element = doc.at_css(data_path)
 
         if data_element.present?
-          data_element.content
+          JSON.parse(data_element.content, symbolize_names: true).dig(*JOBS_PATH).to_json
         else
           raise FlatJobs::Error.new("Data element not found")
         end
@@ -25,7 +25,6 @@ module FlatJobs
 
       def parse_jobs(data)
         JSON.parse(data, symbolize_names: true)
-          .dig(*JOBS_PATH)
           .map { |_, jobs| jobs }.flatten
           .map { |job| parse_job(job) }
       end

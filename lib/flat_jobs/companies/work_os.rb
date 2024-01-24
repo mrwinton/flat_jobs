@@ -5,8 +5,14 @@ module FlatJobs
     class WorkOS < FlatJobs::Company
       FlatJobs.register_company(:work_os, new)
 
-      def fetch_data
-        FlatJobs::Client.get(**REQUEST_OPTS).body
+      def fetch_data(data_path: "//*[@class='w-tab-pane w--tab-active']//h3[contains(text(), 'Engineering')]/following-sibling::div")
+        response = FlatJobs::Client.get(**REQUEST_OPTS)
+        doc = Nokogiri::HTML(response.body)
+        data_element = doc.at_xpath(data_path)
+
+        if data_element.present?
+          data_element.to_html
+        end
       end
 
       def data_file_type
@@ -15,7 +21,7 @@ module FlatJobs
 
       def parse_jobs(data)
         doc = Nokogiri::HTML(data)
-        doc.xpath("//*[@class='w-tab-pane w--tab-active']//h3[contains(text(), 'Engineering')]/following-sibling::div//div[@role='listitem']")
+        doc.xpath("//div[@role='listitem']")
           .map { |job| parse_job(job) }
       end
 

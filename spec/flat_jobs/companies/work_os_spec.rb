@@ -20,8 +20,10 @@ RSpec.describe FlatJobs::Companies::WorkOS do
   describe "#parse_jobs" do
     it "returns jobs" do
       data = vcr_response_data(vcr: "work_os_data").first
+      doc = Nokogiri::HTML(data)
+      data_element = doc.at_xpath("//*[@class='w-tab-pane w--tab-active']//h3[contains(text(), 'Engineering')]/following-sibling::div")
 
-      result = FlatJobs::Companies::WorkOS.new.parse_jobs(data)
+      result = FlatJobs::Companies::WorkOS.new.parse_jobs(data_element.to_html)
 
       expect(result.count).not_to be_zero
       job = result.first

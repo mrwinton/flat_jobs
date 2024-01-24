@@ -27,8 +27,9 @@ RSpec.describe FlatJobs::Companies::Linear do
     it "returns jobs" do
       response = vcr_response_data(vcr: "linear_data").first
       data = Nokogiri::HTML(response).at_css("script#__NEXT_DATA__").content
+      json = JSON.parse(data, symbolize_names: true).dig(*%i[props pageProps page prefooter jobs Engineering])
 
-      result = FlatJobs::Companies::Linear.new.parse_jobs(data)
+      result = FlatJobs::Companies::Linear.new.parse_jobs(json.to_json)
 
       expect(result.count).not_to be_zero
       job = result.first

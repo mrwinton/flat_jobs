@@ -7,6 +7,12 @@ RSpec.describe FlatJobs::Companies::Fly do
 
       expect(result).not_to be_empty
     end
+
+    it "returns nil when no data element is found" do
+      result = FlatJobs::Companies::Fly.new.fetch_data(data_path: "random_path")
+
+      expect(result).to be_nil
+    end
   end
 
   describe "#data_file_type" do

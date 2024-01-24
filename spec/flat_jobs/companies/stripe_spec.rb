@@ -20,8 +20,10 @@ RSpec.describe FlatJobs::Companies::Stripe do
   describe "#parse_jobs" do
     it "returns jobs" do
       data = vcr_response_data(vcr: "stripe_data").first
+      doc = Nokogiri::HTML(data)
+      data_element = doc.at_css(".JobsListings__tableBody")
 
-      result = FlatJobs::Companies::Stripe.new.parse_jobs(data)
+      result = FlatJobs::Companies::Stripe.new.parse_jobs(data_element.to_html)
 
       expect(result.count).not_to be_zero
       job = result.first
