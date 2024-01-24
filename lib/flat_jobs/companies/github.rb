@@ -8,7 +8,7 @@ module FlatJobs
       def fetch_data
         response = FlatJobs::Client.get(**REQUEST_OPTS)
         data = JSON.parse(response.body, symbolize_names: true)
-        data.delete(:metadata)
+        data.delete(:meta_data)
         data.to_json
       end
 
