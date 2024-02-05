@@ -17,7 +17,7 @@ end
 
 group :test do
   gem "fakefs"
-  gem "rspec", "~> 3.0"
+  gem "rspec", "~> 3.13"
   gem "simplecov", require: false
   gem "vcr"
   gem "webmock"
