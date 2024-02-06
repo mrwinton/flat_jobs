@@ -11,9 +11,7 @@ module FlatJobs
         data_element = doc.at_css(data_path)
 
         if data_element.present?
-          data_element.content
-        else
-          raise FlatJobs::Error.new("Data element not found")
+          data_element.to_html
         end
       end
 
@@ -22,13 +20,17 @@ module FlatJobs
       end
 
       def parse_jobs(data)
-        [null_job(data)]
+        doc = Nokogiri::HTML(data)
+        doc.css("li.job").map { |job| parse_job(job) }
       end
 
       private
 
+      THOUGHTBOT_URL = "https://thoughtbot.com"
+      private_constant :THOUGHTBOT_URL
+
       REQUEST_OPTS = {
-        url: "https://thoughtbot.com/jobs",
+        url: "#{THOUGHTBOT_URL}/jobs",
         params: {},
         headers: {
           "Content-Type" => "text/html"
@@ -36,11 +38,20 @@ module FlatJobs
       }.freeze
       private_constant :REQUEST_OPTS
 
-      def null_job(data)
-        jobs_empty = data.include?("We currently have no open positions.")
-        notes = jobs_empty ? "0 jobs found" : "1+ jobs found"
+      def parse_job(job)
+        job_url = THOUGHTBOT_URL + job.at_css("a")["href"]
+        job_id = job_url.split("/").last
+        job_title = job.at_css("a").text
+        job_location = job["data-region"]
 
-        FlatJobs::NullJob.new(company: company_name, notes: notes)
+        FlatJobs::Job.new(
+          company: company_name,
+          id: job_id,
+          title: job_title,
+          location: job_location,
+          url: job_url,
+          notes: ""
+        )
       end
     end
   end

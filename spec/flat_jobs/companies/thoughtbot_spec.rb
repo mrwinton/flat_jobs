@@ -8,10 +8,10 @@ RSpec.describe FlatJobs::Companies::Thoughtbot do
       expect(result).not_to be_empty
     end
 
-    it "raises an error when no data element is found" do
-      expect do
-        FlatJobs::Companies::Thoughtbot.new.fetch_data(data_path: "random_path")
-      end.to raise_error(FlatJobs::Error, "Data element not found")
+    it "returns nil when no data element is found" do
+      result = FlatJobs::Companies::Thoughtbot.new.fetch_data(data_path: "random_path")
+
+      expect(result).to be_nil
     end
   end
 
@@ -24,7 +24,7 @@ RSpec.describe FlatJobs::Companies::Thoughtbot do
   end
 
   describe "#parse_jobs" do
-    it "reports 0 jobs when no jobs are returned" do
+    it "returns jobs" do
       data = vcr_response_data(vcr: "thoughtbot_data").first
 
       result = FlatJobs::Companies::Thoughtbot.new.parse_jobs(data)
@@ -32,18 +32,11 @@ RSpec.describe FlatJobs::Companies::Thoughtbot do
       expect(result.count).not_to be_zero
       job = result.first
       expect(job.company).to eq("thoughtbot")
-      expect(job.notes).to eq("0 jobs found")
-    end
-
-    it "reports jobs when no-jobs-message is not found" do
-      data = "We have open positions"
-
-      result = FlatJobs::Companies::Thoughtbot.new.parse_jobs(data)
-
-      expect(result.count).not_to be_zero
-      job = result.first
-      expect(job.company).to eq("thoughtbot")
-      expect(job.notes).to eq("1+ jobs found")
+      expect(job.id).to eq("business-development-manager-europe-west-asia-and-africa-3CD3B6F5E4")
+      expect(job.title).to eq("Business Development Manager (Europe, West Asia, and Africa)")
+      expect(job.url).to eq("https://thoughtbot.com/jobs/business-development-manager-europe-west-asia-and-africa-3CD3B6F5E4")
+      expect(job.location).to eq("Europe, West Asia, Africa")
+      expect(job.notes).to be_empty
     end
   end
 end
