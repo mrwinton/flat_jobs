@@ -7,32 +7,32 @@ module FlatJobs
     class Linear < FlatJobs::Company
       FlatJobs.register_company(:linear, new)
 
-      def fetch_data(data_path: "script#__NEXT_DATA__")
+      def fetch_data(data_path: "//h4[contains(text(), 'Engineering')]/parent::div")
         response = FlatJobs::Client.get(**REQUEST_OPTS)
         doc = Nokogiri::HTML(response.body)
-        data_element = doc.at_css(data_path)
+        data_element = doc.at_xpath(data_path)
 
         if data_element.present?
-          JSON.parse(data_element.content, symbolize_names: true).dig(*JOBS_PATH).to_json
-        else
-          raise FlatJobs::Error.new("Data element not found")
+          data_element.to_html
         end
       end
 
       def data_file_type
-        FileType::JSON
+        FileType::HTML
       end
 
       def parse_jobs(data)
-        JSON.parse(data, symbolize_names: true)
-          .map { |_, jobs| jobs }.flatten
-          .map { |job| parse_job(job) }
+        doc = Nokogiri::HTML(data)
+        doc.css("li").map { |role| parse_role(role) }.flatten
       end
 
       private
 
+      LINEAR_URL = "https://linear.app"
+      private_constant :LINEAR_URL
+
       REQUEST_OPTS = {
-        url: "https://linear.app/careers",
+        url: "#{LINEAR_URL}/careers",
         params: {},
         headers: {
           "Content-Type" => "text/html"
@@ -40,18 +40,24 @@ module FlatJobs
       }.freeze
       private_constant :REQUEST_OPTS
 
-      JOBS_PATH = %i[props pageProps page prefooter jobs Engineering]
-      private_constant :JOBS_PATH
+      def parse_role(role)
+        job_title = role.at_css("p").text
+        job_links = role.css("a")
 
-      def parse_job(job)
-        FlatJobs::Job.new(
-          company: company_name,
-          id: job[:id],
-          title: job.dig(:title),
-          location: job.dig(:location),
-          url: job.dig(:jobUrl),
-          notes: nil
-        )
+        job_links.map do |job_link|
+          job_url = LINEAR_URL + job_link["href"]
+          job_id = job_url.split("/").last
+          job_location = job_link.text
+
+          FlatJobs::Job.new(
+            company: company_name,
+            id: job_id,
+            title: job_title,
+            location: job_location,
+            url: job_url,
+            notes: nil
+          )
+        end
       end
     end
   end

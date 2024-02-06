@@ -8,10 +8,10 @@ RSpec.describe FlatJobs::Companies::Linear do
       expect(result).not_to be_empty
     end
 
-    it "raises an error when no data element is found" do
-      expect do
-        FlatJobs::Companies::Linear.new.fetch_data(data_path: "random_path")
-      end.to raise_error(FlatJobs::Error, "Data element not found")
+    it "returns nil when no data element is found" do
+      result = FlatJobs::Companies::Linear.new.fetch_data(data_path: "random_path")
+
+      expect(result).to be_nil
     end
   end
 
@@ -19,25 +19,26 @@ RSpec.describe FlatJobs::Companies::Linear do
     it "returns expected file type" do
       result = FlatJobs::Companies::Linear.new.data_file_type
 
-      expect(result).to eq(FlatJobs::FileType::JSON)
+      expect(result).to eq(FlatJobs::FileType::HTML)
     end
   end
 
   describe "#parse_jobs" do
     it "returns jobs" do
       response = vcr_response_data(vcr: "linear_data").first
-      data = Nokogiri::HTML(response).at_css("script#__NEXT_DATA__").content
-      json = JSON.parse(data, symbolize_names: true).dig(*%i[props pageProps page prefooter jobs Engineering])
+      data_path = "//h4[contains(text(), 'Engineering')]/parent::div"
+      doc = Nokogiri::HTML(response)
+      data_element = doc.at_xpath(data_path)
 
-      result = FlatJobs::Companies::Linear.new.parse_jobs(json.to_json)
+      result = FlatJobs::Companies::Linear.new.parse_jobs(data_element.to_html)
 
       expect(result.count).not_to be_zero
       job = result.first
       expect(job.company).to eq("linear")
-      expect(job.id).to eq("0d1b715f-5de3-4924-87f1-d64e566cd065")
-      expect(job.title).to eq("Senior - Staff Mobile Engineer (Android)")
-      expect(job.url).to eq("https://jobs.ashbyhq.com/Linear/0d1b715f-5de3-4924-87f1-d64e566cd065")
-      expect(job.location).to eq("North America")
+      expect(job.id).to eq("0ba80a46-e912-4a66-9231-b2d609b2c48d")
+      expect(job.title).to eq("Senior - Staff Mobile Engineer (iOS)")
+      expect(job.url).to eq("https://linear.app/careers/0ba80a46-e912-4a66-9231-b2d609b2c48d")
+      expect(job.location).to eq("North America →")
       expect(job.notes).to be_nil
     end
   end
