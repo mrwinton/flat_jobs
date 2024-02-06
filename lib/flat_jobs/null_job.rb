@@ -11,6 +11,10 @@ module FlatJobs
       @notes = notes
     end
 
+    def id
+      nil
+    end
+
     def to_csv
       to_a.to_csv
     end

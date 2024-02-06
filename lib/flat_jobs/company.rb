@@ -38,7 +38,7 @@ module FlatJobs
 
     def parse(data)
       jobs = parse_jobs(data).presence || null_data
-      jobs.map(&:to_csv).join
+      jobs.sort_by(&:id).map(&:to_csv).join
     end
 
     def null_data
