@@ -12,7 +12,7 @@ gem "rake", "~> 13.0"
 
 group :test, :development do
   gem "solargraph"
-  gem "standard", "~> 1.33"
+  gem "standard", "~> 1.34"
 end
 
 group :test do
