@@ -1,3 +1,4 @@
 company,id,title,location,url,notes
-fly,developer-relations-engineer,Developer Relations Engineer,North America and Europe,https://fly.io/jobs/developer-relations-engineer/,""
-fly,infrastructure-engineering,Developer Relations Engineer,North America and Europe,https://fly.io/jobs/infrastructure-engineering/,""
+fly,developer-relations-engineer,Developer Relations Engineer,North America only,https://fly.io/jobs/developer-relations-engineer/,""
+fly,developer-relations-engineer-js,Developer Relations Engineer,North America only,https://fly.io/jobs/developer-relations-engineer-js/,""
+fly,infrastructure-engineering,Developer Relations Engineer,North America only,https://fly.io/jobs/infrastructure-engineering/,""
