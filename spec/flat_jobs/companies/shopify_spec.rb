@@ -7,6 +7,12 @@ RSpec.describe FlatJobs::Companies::Shopify do
 
       expect(result).not_to be_empty
     end
+
+    it "returns nil when data cannot be resolved" do
+      result = FlatJobs::Companies::Shopify.new.fetch_data(pattern: /bad_pattern/)
+
+      expect(result).to eq(nil)
+    end
   end
 
   describe "#data_file_type" do
@@ -23,12 +29,11 @@ RSpec.describe FlatJobs::Companies::Shopify do
       doc = Nokogiri::HTML(data)
       script_elements = doc.css('script')
       pattern = /window.__remixContext\s*=\s*({.*?});/m
-      data = script_elements
-                 .map(&:content)
-                 .find { |content| content =~ pattern }
-                 .then { |match| match ? $1 : nil }
+      script_elements
+        .map(&:content)
+        .find { |content| content =~ pattern }
 
-      result = FlatJobs::Companies::Shopify.new.parse_jobs(data)
+      result = FlatJobs::Companies::Shopify.new.parse_jobs($1)
 
       expect(result.count).not_to be_zero
       job = result.first

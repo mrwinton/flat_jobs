@@ -5,11 +5,10 @@ module FlatJobs
     class Shopify < FlatJobs::Company
       FlatJobs.register_company(:Shopify, new)
 
-      def fetch_data(data_path: "#Engineering")
+      def fetch_data(pattern: /window.__remixContext\s*=\s*({.*?});/m)
         response = FlatJobs::Client.get(**REQUEST_OPTS)
         doc = Nokogiri::HTML(response.body)
         script_elements = doc.css('script')
-        pattern = /window.__remixContext\s*=\s*({.*?});/m
         script_elements
           .map(&:content)
           .find { |content| content =~ pattern }
