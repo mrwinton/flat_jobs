@@ -20,17 +20,24 @@ RSpec.describe FlatJobs::Companies::Shopify do
   describe "#parse_jobs" do
     it "returns jobs" do
       data = vcr_response_data(vcr: "shopify_data").first
+      doc = Nokogiri::HTML(data)
+      script_elements = doc.css('script')
+      pattern = /window.__remixContext\s*=\s*({.*?});/m
+      data = script_elements
+                 .map(&:content)
+                 .find { |content| content =~ pattern }
+                 .then { |match| match ? $1 : nil }
 
       result = FlatJobs::Companies::Shopify.new.parse_jobs(data)
 
       expect(result.count).not_to be_zero
       job = result.first
       expect(job.company).to eq("shopify")
-      expect(job.id).to eq("743999956550023")
-      expect(job.title).to eq("Staff Developer - Mobile Engineering")
-      expect(job.url).to eq("https://api.smartrecruiters.com/v1/companies/Shopify/postings/743999956550023")
-      expect(job.location).to eq("London, England")
-      expect(job.notes).to match("Mid-Senior Level")
+      expect(job.id).to eq("f420b831-2186-4c69-bab0-82d779354386")
+      expect(job.title).to eq("Engineering Internships, Winter 2025")
+      expect(job.url).to eq("https://www.shopify.com/careers?ashby_jid=4c5d6050-9a66-4b7e-8873-13b892846e66")
+      expect(job.location).to eq("Americas")
+      expect(job.notes).to eq("")
     end
   end
 end
