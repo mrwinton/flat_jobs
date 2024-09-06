@@ -8,7 +8,7 @@ module FlatJobs
       def fetch_data(pattern: /window.__remixContext\s*=\s*({.*?});/m)
         response = FlatJobs::Client.get(**REQUEST_OPTS)
         doc = Nokogiri::HTML(response.body)
-        script_elements = doc.css('script')
+        script_elements = doc.css("script")
         script_elements
           .map(&:content)
           .find { |content| content =~ pattern }
@@ -21,7 +21,7 @@ module FlatJobs
 
       def parse_jobs(data)
         json = JSON.parse(data, symbolize_names: true)
-        json.dig(:state, :loaderData, :'pages/shopify.com/($locale)/careers', :jobPostingsWithJobs)
+        json.dig(:state, :loaderData, :"pages/shopify.com/($locale)/careers", :jobPostingsWithJobs)
           .map { |job| parse_job(job) if engineering_job?(job) }
           .compact
       end
@@ -32,7 +32,7 @@ module FlatJobs
       private_constant :URL
 
       REQUEST_OPTS = {
-        url: "#{URL}",
+        url: URL,
         params: {},
         headers: {
           "Content-Type" => "text/html"

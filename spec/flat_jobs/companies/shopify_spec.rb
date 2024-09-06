@@ -27,7 +27,7 @@ RSpec.describe FlatJobs::Companies::Shopify do
     it "returns jobs" do
       data = vcr_response_data(vcr: "shopify_data").first
       doc = Nokogiri::HTML(data)
-      script_elements = doc.css('script')
+      script_elements = doc.css("script")
       pattern = /window.__remixContext\s*=\s*({.*?});/m
       script_elements
         .map(&:content)
