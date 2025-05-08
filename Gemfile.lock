@@ -34,11 +34,12 @@ GEM
     drb (2.2.1)
     e2mmap (0.1.0)
     fakefs (2.5.0)
-    faraday (2.11.0)
-      faraday-net_http (>= 2.0, < 3.4)
+    faraday (2.12.2)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
       logger
-    faraday-net_http (3.3.0)
-      net-http
+    faraday-net_http (3.4.0)
+      net-http (>= 0.5.0)
     hashdiff (1.1.1)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
@@ -50,9 +51,9 @@ GEM
       kramdown (~> 2.0)
     language_server-protocol (3.17.0.3)
     lint_roller (1.1.0)
-    logger (1.6.1)
+    logger (1.6.2)
     minitest (5.25.1)
-    net-http (0.4.1)
+    net-http (0.6.0)
       uri
     nokogiri (1.16.7-arm64-darwin)
       racc (~> 1.4)
@@ -141,7 +142,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
-    uri (0.13.1)
+    uri (1.0.2)
     vcr (6.3.1)
       base64
     webmock (3.23.1)
